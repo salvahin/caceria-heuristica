@@ -513,7 +513,8 @@ const head=(i,t,d)=>`<div class="m-head"><div><p class="lbl">Nivel ${i}</p><h2>$
 const phone=(inner,id)=>`<div class="phone px"><div class="phone-bar"><span>TaskPal</span><span>9:41</span></div><div class="screen" id="${id}">${inner}</div></div>`;
 
 /* ----- Nivel 1: registro ----- */
-const reg={accounts:[{nombre:"Ana López",correo:"ana@correo.mx",edad:29},{nombre:"Beto Salas",correo:"beto@correo.mx",edad:34}],last:0,lastEmail:"",msg:null};
+function seedAccounts(){return [{nombre:"Ana López",correo:"ana@correo.mx",edad:29},{nombre:"Beto Salas",correo:"beto@correo.mx",edad:34}];}
+const reg={accounts:seedAccounts(),last:0,lastEmail:"",msg:null};
 VIEWS.registro=()=>`${head(1,"Registro de cuenta","Crea cuentas en TaskPal. El formulario ya viene lleno con datos válidos: cámbialos para encontrar 9 bugs.")}
  <div class="mission"><div class="stage">
   ${phone(`<h3 class="app-h">Crea tu cuenta</h3>
@@ -541,7 +542,7 @@ AFTER.registro=()=>{
   const nombre=$("#reg-nombre").value,correo=$("#reg-correo").value.trim(),edadS=$("#reg-edad").value.trim(),pass=$("#reg-pass").value;
   const now=Date.now();const quick=now-reg.last<1500;
   if(nombre.length===0)return regMsg("err","El nombre es obligatorio.");
-  if(EMOJI.test(nombre)){$("#reg-crash").hidden=false;triggerBug("r-emoji",`nombre = "${nombre}"\nFATAL: RangeError en medirAncho()\nla app se cerró`);return;}
+  if(EMOJI.test(nombre)){$("#reg-msg").innerHTML="";$("#reg-crash").hidden=false;triggerBug("r-emoji",`nombre = "${nombre}"\nFATAL: RangeError en medirAncho()\nla app se cerró`);return;}
   if(!correo.includes("."))return regMsg("err","Correo inválido.");
   if(!/^-?\d+$/.test(edadS))return regMsg("err","Escribe la edad con números.");
   const edad=parseInt(edadS,10);
@@ -568,7 +569,8 @@ const MES=["enero","febrero","marzo","abril","mayo","junio","julio","agosto","se
 const MAXDIA=[31,29,31,30,31,30,31,31,31,31,30,31]; // ← contiene bugs a propósito
 const ZONAS={cdmx:"Ciudad de México (UTC−6)",tij:"Tijuana (UTC−8, con horario de verano)",ny:"Nueva York (UTC−5, con horario de verano)",mad:"Madrid (UTC+1, con horario de verano)"};
 const leap=y=>(y%4===0&&y%100!==0)||y%400===0;
-const rec={list:[{titulo:"Junta de equipo",fecha:"3 de noviembre de 2026",hora:"10:00",zona:"cdmx",dev:"10:00"}]};
+function seedReminders(){return [{titulo:"Junta de equipo",fecha:"3 de noviembre de 2026",hora:"10:00",zona:"cdmx",dev:"10:00"}];}
+const rec={list:seedReminders()};
 VIEWS.recordatorios=()=>`${head(2,"Recordatorios","Programa recordatorios. Tu dispositivo está en la Ciudad de México. Hay 6 bugs escondidos en fechas, horas y zonas horarias.")}
  <div class="mission"><div class="stage">
   ${phone(`<h3 class="app-h">Nuevo recordatorio</h3>
@@ -811,7 +813,8 @@ document.addEventListener("click",e=>{
  if(d.filter!==undefined){cxFilter=d.filter;return render();}
  if(d.reset!==undefined){confirmReset=true;return render();}
  if(d.resetNo!==undefined){confirmReset=false;return render();}
- if(d.resetYes!==undefined){S=blank();save();confirmReset=false;fz=null;specMarks=new Set();specChecked=false;toast("Progreso reiniciado");return render();}
+ if(d.resetYes!==undefined){S=blank();save();confirmReset=false;fz=null;specMarks=new Set();specChecked=false;
+  reg.accounts=seedAccounts();reg.last=0;reg.lastEmail="";rec.list=seedReminders();api.tasks=seedTasks();api.next=10;api.res=null;toast("Progreso reiniciado");return render();}
 });
 document.addEventListener("keydown",e=>{
  const s=e.target.closest&&e.target.closest("[data-seg]");
