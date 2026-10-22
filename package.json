@@ -1,0 +1,13 @@
+{
+  "name": "caceria-heuristica",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Juego para aprender heurísticas de prueba de software.",
+  "scripts": {
+    "start": "npx --yes serve -l 5173 .",
+    "test": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.0"
+  }
+}
