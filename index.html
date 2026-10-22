@@ -339,6 +339,18 @@ footer p{max-width:90ch;margin:0 0 6px}
 .overlay-app p{font-family:var(--f-term);font-size:24px;line-height:1.1;margin:0}
 .overlay-app .app-btn{background:var(--amber);color:var(--screen-ink)}
 
+/* acerca */
+.about{display:grid;gap:18px}
+.about .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:18px;align-items:start}
+.about section{padding:18px;display:grid;gap:10px;align-content:start}
+.about h3{color:var(--amber);margin:0}
+.about p,.about li{font-size:16px;margin:0}
+.about ul,.about ol{margin:0;padding-left:22px;display:grid;gap:6px}
+.about .lvl-list li b{color:var(--cyan);font-weight:700}
+.about .credit{background:var(--panel-2)}
+.about .credit p{font-size:17px}
+.linkish{background:none;border:0;padding:0;font:inherit;color:var(--cyan);text-decoration:underline;cursor:pointer}
+
 @media (max-width:980px){
   .mission{grid-template-columns:minmax(0,1fr)}
   .side{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
@@ -366,6 +378,7 @@ footer p{max-width:90ch;margin:0 0 6px}
 <main class="wrap" id="view"></main>
 <footer class="wrap">
   <p>Contenido parafraseado y adaptado del <a href="https://www.ministryoftesting.com/insights/test-heuristics-cheat-sheet" target="_blank" rel="noopener">Test Heuristics Cheat Sheet</a> de Ministry of Testing (Simon Tomes, 2022). © 2006 Quality Tree Software, Inc. y © 2022 Ministry of Testing Ltd. Ideas originales de Elisabeth Hendrickson, James Lyndsay y Dale Emery, con aportes de Andrea Jensen, Ady Stokes, Callum Akehurst-Ryan, Dave Harrison, Deborah Sherwood, Mark Winteringham y Simon Tomes.</p>
+  <p>Creado por Salvador Hinojosa con Claude, de Anthropic. <button class="linkish" data-go="acerca">Acerca del juego</button></p>
   <p>Las mnemotecnias conservan su nombre original y el crédito a quienes las crearon. TaskPal es una app ficticia: todos sus bugs están plantados a propósito. Tu progreso se guarda solo en este navegador.</p>
 </footer>
 <div class="overlay" id="modal" hidden></div>
@@ -756,7 +769,7 @@ VIEWS.inicio=()=>{
   <div><p class="lbl">Juego de heurísticas de prueba</p>
    <h1>Cacería<br>Heurística</h1>
    <p class="lead">TaskPal es una app de tareas con bugs escondidos a propósito. Explórala como lo haría una persona tester, nombra la heurística que te llevó a cada bug y colecciona las cartas del Códice.</p>
-   <div class="row">${nextL?`<button class="btn" data-go="${nextL.id}">${pr>0?"Continuar":"Empezar"}: ${esc(nextL.n)}</button>`:`<button class="btn" data-go="logros">Ver mis logros</button>`}<button class="btn ghost" data-go="codice">Abrir el Códice</button></div>
+   <div class="row">${nextL?`<button class="btn" data-go="${nextL.id}">${pr>0?"Continuar":"Empezar"}: ${esc(nextL.n)}</button>`:`<button class="btn" data-go="logros">Ver mis logros</button>`}<button class="btn ghost" data-go="codice">Abrir el Códice</button><button class="btn ghost" data-go="acerca">Cómo se usa</button></div>
   </div>
   <div class="hero-art">${pix(BUG)}</div>
  </section>
@@ -1372,6 +1385,63 @@ VIEWS.logros=()=>`<div class="m-head"><div><p class="lbl">Tu partida</p><h2>Logr
 function resetSims(){Object.assign(reg,{accounts:seedAccounts(),last:0,lastEmail:"",form:{}});Object.assign(rec,{list:seedReminders(),form:{}});Object.assign(api,{tasks:seedTasks(),next:10,res:null,form:{}});
  sesReset();allyReset();relReset();Object.assign(tri,{picks:new Set(),checked:false,msg:"",cmsg:"",form:{}});pz=null;fz=null;specMarks=new Set();specChecked=false;}
 
+/* ----- Acerca ----- */
+VIEWS.acerca=()=>`<div class="m-head"><div><p class="lbl">Acerca del juego</p><h2>Cómo usar Cacería Heurística</h2><p>Qué enseña, cómo se juega, qué no cubre y quién lo hizo.</p></div></div>
+ <div class="about">
+  <div class="cols">
+   <section class="px"><h3>Qué es</h3>
+    <p>Un juego web para aprender heurísticas de prueba de software: atajos mentales que ayudan a decidir qué probar. Se basa en el Test Heuristics Cheat Sheet de Ministry of Testing y está pensado para estudiantes, testers junior y desarrolladores que empiezan, sin conocimientos previos.</p>
+    <p>La protagonista es TaskPal, una app de tareas ficticia con ${TOTAL_BUGS} bugs plantados a propósito en ${LEVELS.length} niveles.</p></section>
+   <section class="px"><h3>Cómo se juega</h3>
+    <ol>
+     <li>Elige un nivel en el <button class="linkish" data-go="inicio">Mapa</button>. El 10 se abre al completar los niveles 1, 2 y 3.</li>
+     <li>Explora la app simulada: cambia datos, repite acciones, prueba valores raros. No hay instrucciones paso a paso.</li>
+     <li>Cuando algo falla, responde dos preguntas: qué heurística te llevó ahí y qué tan grave es el bug.</li>
+     <li>Cada bug desbloquea cartas del <button class="linkish" data-go="codice">Códice</button> con la heurística explicada.</li>
+     <li>Si te atoras, pide pistas en la bitácora: son gratis, pero cuentan para la insignia «Sin pistas».</li>
+    </ol>
+    <p>Puntos: cada hallazgo da 10 a 25 XP según su gravedad, +10 si aciertas la heurística y +10 si aciertas la gravedad (+5 si quedas a un nivel).</p></section>
+  </div>
+  <section class="px"><h3>Intención pedagógica</h3>
+   <ul>
+    <li><b>Explorar antes de nombrar.</b> Primero provocas el fallo y después aparece la heurística. Equivocarse da XP y una explicación, nunca un castigo.</li>
+    <li><b>Vocabulario con ejemplos concretos.</b> Cada heurística queda ligada a un bug que tú mismo provocaste, no a una definición memorizada.</li>
+    <li><b>Distinguir heurísticas vecinas.</b> Las opciones de cada bug son del mismo tema, así que hay que entender la diferencia, no reconocer una palabra.</li>
+    <li><b>Juzgar qué importa.</b> La pregunta de gravedad, el triaje del nivel 7 y el reporte del nivel 10 practican priorizar y comunicar, no solo encontrar.</li>
+    <li><b>Pensar en otras personas.</b> Los niveles 8 y 9 llevan la prueba a personas usuarias distintas y a la accesibilidad.</li>
+   </ul></section>
+  <section class="px"><h3>Los niveles</h3>
+   <ul class="lvl-list">${LEVELS.map((l,i)=>`<li><b>${i+1}. ${esc(l.n)}.</b> ${esc(l.d)}</li>`).join("")}</ul></section>
+  <div class="cols">
+   <section class="px"><h3>Qué no cubre</h3>
+    <ul>
+     <li>Enseña heurísticas de prueba, no todo el testing. No cubre planes de prueba formales, técnicas de diseño de casos, automatización, pruebas de rendimiento o carga reales, seguridad a fondo, gestión de defectos ni trabajo en equipo dentro de un ciclo de desarrollo.</li>
+     <li>Los bugs están plantados: el juego los detecta por ti y te dice cuántos hay. En un proyecto real, notar que algo está mal y saber cuándo parar es la parte difícil.</li>
+     <li>Cada bug se provoca con entradas concretas; un enfoque distinto pero igual de válido puede no dispararlo.</li>
+     <li>Las gravedades, los pesos del triaje y las interpretaciones de las personas son criterios del autor. Úsalos para discutir, no como verdad única.</li>
+     <li>Las descripciones parafrasean el cheat sheet; para el texto original y su contexto, consulta la fuente.</li>
+    </ul></section>
+   <section class="px"><h3>Límites de un sitio estático</h3>
+    <ul>
+     <li>No hay servidor, cuentas ni calificaciones. Todo corre en tu navegador.</li>
+     <li>Tu progreso se guarda solo en este navegador y este dispositivo. Si borras los datos del sitio, usas modo incógnito o cambias de equipo, empiezas de cero.</li>
+     <li>Nadie más ve tu avance: si un docente quiere evidencia, pide una captura de los logros o el reporte copiado del nivel 10.</li>
+     <li>Las apps simuladas viven en memoria: al recargar la página vuelven a su estado inicial, aunque tu XP y tus cartas se conservan.</li>
+     <li>Funciona sin conexión una vez cargado, salvo las fuentes tipográficas.</li>
+    </ul></section>
+  </div>
+  <section class="px"><h3>Ideas para usarlo en clase</h3>
+   <ul>
+    <li>Después de cada nivel, pregunta qué tienen en común sus bugs y en qué otra app los buscarías.</li>
+    <li>Discute en grupo las gravedades en las que no hubo acuerdo: no siempre hay una sola respuesta.</li>
+    <li>Para medir si se transfiere lo aprendido, al final pide probar otra app pequeña donde nada se detecte solo, y que encuentren y prioricen bugs por su cuenta.</li>
+   </ul></section>
+  <section class="px credit"><h3>Créditos</h3>
+   <p>Creado por <b>Salvador Hinojosa</b> con Claude, el asistente de IA de Anthropic.</p>
+   <p>Contenido parafraseado y adaptado del <a href="https://www.ministryoftesting.com/insights/test-heuristics-cheat-sheet" target="_blank" rel="noopener">Test Heuristics Cheat Sheet</a> de Ministry of Testing (Simon Tomes, 2022). © 2006 Quality Tree Software, Inc. y © 2022 Ministry of Testing Ltd. Ideas originales de Elisabeth Hendrickson, James Lyndsay y Dale Emery. Cada mnemotecnia conserva su nombre y el crédito a quienes la crearon.</p>
+   <p class="muted" style="font-size:14px">Código fuente: <a href="https://github.com/salvahin/caceria-heuristica" target="_blank" rel="noopener">github.com/salvahin/caceria-heuristica</a></p></section>
+ </div>`;
+
 /* ---------- registro de niveles ---------- */
 // Agregar un nivel = una entrada aquí + su vista. Rutas, navegación, mapa y progreso se derivan de este arreglo.
 const LEVELS=[
@@ -1389,8 +1459,8 @@ const LEVELS=[
 ];
 LEVELS.forEach(l=>{l.view=VIEWS[l.id];l.after=AFTER[l.id];});
 const levelById=id=>LEVELS.find(l=>l.id===id);
-const ROUTES=["inicio",...LEVELS.map(l=>l.id),"codice","logros"];
-const NAV=[["inicio","Mapa"],...LEVELS.map(l=>[l.id,l.nav]),["codice","Códice"],["logros","Logros"]];
+const ROUTES=["inicio",...LEVELS.map(l=>l.id),"codice","logros","acerca"];
+const NAV=[["inicio","Mapa"],...LEVELS.map(l=>[l.id,l.nav]),["codice","Códice"],["logros","Logros"],["acerca","Acerca"]];
 const SIMS={reg,rec,api,ses,tri,ally,rel};
 let cur=ROUTES.includes(location.hash.slice(1))?location.hash.slice(1):"inicio";
 function go(r){if(!ROUTES.includes(r))r="inicio";if(cur==="release"&&r!=="release")relPause();cur=r;try{history.replaceState(null,"","#"+r);}catch(e){}render();window.scrollTo(0,0);}
