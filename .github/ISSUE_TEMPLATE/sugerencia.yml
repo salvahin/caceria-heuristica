@@ -1,0 +1,41 @@
+name: Sugerencia de mejora
+description: Una idea para un nivel, una heurística, una persona usuaria o una mejora pedagógica.
+title: "[Idea] "
+labels: ["mejora"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ¡Gracias por la idea! Si ya usaste el juego con un grupo, cuéntanos cómo te fue: esas experiencias ayudan mucho.
+  - type: dropdown
+    id: tipo
+    attributes:
+      label: Tipo de sugerencia
+      options:
+        - Nivel nuevo
+        - Heurística o carta que falta
+        - Nueva persona usuaria
+        - Mejora pedagógica
+        - Mejora de la interfaz o la accesibilidad
+        - Experiencia en clase
+        - Otra
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: Tu idea
+      description: ¿Qué propones y qué aprendería quien juegue?
+    validations:
+      required: true
+  - type: textarea
+    id: ejemplo
+    attributes:
+      label: Ejemplo concreto (opcional)
+      description: Para un bug o nivel nuevo, ¿con qué entrada se provocaría y qué heurística enseñaría?
+  - type: checkboxes
+    id: pr
+    attributes:
+      label: Contribución
+      options:
+        - label: Me gustaría proponer el cambio con un pull request (ver CONTRIBUTING.md).

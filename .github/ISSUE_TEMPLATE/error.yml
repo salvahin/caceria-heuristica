@@ -1,0 +1,72 @@
+name: Error del juego
+description: Algo del juego no funciona como debería (no los bugs plantados de TaskPal).
+title: "[Error] "
+labels: ["error"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por avisar. Recuerda que **los 42 bugs de TaskPal están plantados a propósito**: aquí buscamos errores del juego mismo, como botones que no responden, bugs plantados que no se disparan, respuestas que parecen incorrectas o textos con errores.
+  - type: dropdown
+    id: nivel
+    attributes:
+      label: ¿Dónde pasó?
+      options:
+        - Mapa / inicio
+        - "1 · Registro de cuenta"
+        - "2 · Recordatorios"
+        - "3 · Consola de la API"
+        - "4 · Detective de specs"
+        - "5 · Forja de mnemotecnias"
+        - "6 · Dos sesiones"
+        - "7 · Triaje del release"
+        - "8 · Ruleta de personas"
+        - "9 · Accesibilidad"
+        - "10 · Día de release"
+        - Códice
+        - Logros
+        - Acerca
+        - En varias partes
+    validations:
+      required: true
+  - type: dropdown
+    id: tipo
+    attributes:
+      label: Tipo de problema
+      options:
+        - Algo se rompe o no responde
+        - Un bug plantado no se dispara (o se dispara con una entrada válida)
+        - Una respuesta o gravedad parece incorrecta
+        - Texto confuso o con errores
+        - Accesibilidad del propio juego
+        - Otro
+    validations:
+      required: true
+  - type: textarea
+    id: pasos
+    attributes:
+      label: Pasos para reproducirlo
+      placeholder: |
+        1. Entra al nivel 2.
+        2. Escribe la fecha 31/04/2026.
+        3. Toca «Programar».
+    validations:
+      required: true
+  - type: textarea
+    id: esperado
+    attributes:
+      label: Qué esperabas que pasara
+    validations:
+      required: true
+  - type: textarea
+    id: obtenido
+    attributes:
+      label: Qué pasó en realidad
+      description: Si puedes, agrega una captura de pantalla.
+    validations:
+      required: true
+  - type: input
+    id: navegador
+    attributes:
+      label: Navegador y dispositivo
+      placeholder: Chrome 155 en macOS, Safari en iPhone…

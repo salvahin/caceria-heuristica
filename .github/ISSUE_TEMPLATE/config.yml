@@ -1,0 +1,8 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Jugar Cacería Heurística
+    url: https://salvahin.github.io/caceria-heuristica/
+    about: Abre el juego. Recuerda que los 42 bugs de TaskPal son intencionales.
+  - name: Cómo contribuir
+    url: https://github.com/salvahin/caceria-heuristica/blob/main/CONTRIBUTING.md
+    about: Convenciones del proyecto y cómo probar tus cambios antes de un pull request.
