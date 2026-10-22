@@ -1245,7 +1245,7 @@ function relApp(){
  if(!rel.started)return `<div class="overlay-app"><p>TaskPal 2.0 está listo para probarse.</p><p style="font-size:18px">${reduced()?"Tómate el tiempo que necesites.":"Tienes 10 minutos y puedes pausar."}</p><button class="app-btn" data-rel="start">Empezar el día de release</button></div>`;
  const tabs=[["tareas","Tareas"],["etiquetas","Etiquetas"],["enfoque","Enfoque"],["ajustes","Ajustes"]];
  const act=relActive();let body="";
- if(rel.tab==="tareas")body=`<p class="rel-count">Tienes ${act.filter(t=>!t.done).length} tareas pendientes · Completadas hoy: ${rel.doneToday}</p>
+ if(rel.tab==="tareas")body=`<p class="rel-count">${(n=>`Tienes ${n} ${n===1?"tarea pendiente":"tareas pendientes"}`)(act.filter(t=>!t.done).length)} · Completadas hoy: ${rel.doneToday}</p>
   <ul class="rel-list">${act.map(t=>`<li class="${t.done?"done":""}"><input type="checkbox" data-nopersist data-rel-sel="${t.id}" aria-label="Seleccionar «${esc(t.t)}»" ${rel.sel.has(t.id)?"checked":""}><span class="rel-t">${esc(t.t)}<small>${esc(tagName(t.tag))}${t.att.length?" · adjunto: "+esc(t.att.join(", ")):""}</small></span>
    <span class="rel-acts"><button class="mini-btn" data-rel="done" data-id="${t.id}" aria-label="${t.done?"Marcar como pendiente":"Completar"}: ${esc(t.t)}">${t.done?"↺ Pendiente":"✓ Completar"}</button><button class="mini-btn" data-rel="edit" data-id="${t.id}">Editar</button><button class="mini-btn" data-rel="del" data-id="${t.id}">Borrar</button></span></li>`).join("")||`<li class="muted-s">No hay tareas.</li>`}</ul>
   <div class="mini-row"><button class="mini-btn" data-rel="archive">Archivar seleccionadas</button><button class="mini-btn" data-rel="export">Exportar CSV</button></div>
