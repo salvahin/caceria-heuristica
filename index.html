@@ -242,6 +242,103 @@ th{color:var(--muted);font-weight:400}
 footer{border-top:4px solid var(--line);padding-block:20px 28px;font-size:13px;color:var(--muted)}
 footer p{max-width:90ch;margin:0 0 6px}
 
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.tile.locked{background:var(--shadow)}
+.q{font-weight:700;margin:0}
+.app-btn:disabled{opacity:.5;cursor:default}
+.muted-s{color:#5a4f86;font-size:14px}
+.term.wrap{white-space:pre-wrap;overflow-wrap:anywhere}
+
+/* sesiones */
+.duo{display:grid;grid-template-columns:repeat(2,minmax(0,340px));gap:18px;align-items:start}
+.ses-screen{min-height:0}
+.ses-list{list-style:none;margin:0 0 6px;padding:0;display:grid;gap:6px}
+.ses-item{width:100%;display:flex;justify-content:space-between;gap:8px;font:15px var(--f-body);text-align:left;background:#fff;color:var(--screen-ink);border:2px solid var(--screen-line);padding:8px 10px;cursor:pointer}
+.ses-item[aria-pressed="true"]{border-color:var(--screen-ink);background:var(--screen-soft)}
+.mini-row{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px;align-items:center}
+.mini-row .app-btn{margin-top:0}
+.mini-btn{font:700 13px var(--f-body);background:var(--screen-soft);color:var(--screen-ink);border:2px solid var(--screen-line);padding:7px 9px;cursor:pointer}
+.mini-btn[aria-pressed="true"]{background:var(--screen-ink);color:var(--screen)}
+.mini-btn.wide{width:100%;margin-top:8px}
+.ses-edit{display:grid;gap:4px;margin-top:6px}
+.ses-saving{margin-top:10px;padding:8px 10px;background:#ffe9a8;font-size:14px;position:relative;overflow:hidden}
+.ses-saving::after{content:"";position:absolute;left:0;bottom:0;height:4px;width:100%;background:var(--amber-deep);transform-origin:left;animation:fill 2s steps(10) forwards}
+@keyframes fill{from{transform:scaleX(0)}}
+.ses-out{display:grid;place-content:center;gap:12px;min-height:300px;text-align:center}
+.ses-out p{font-family:var(--f-term);font-size:24px;margin:0}
+
+/* triaje */
+.areas{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+.area{padding:14px;display:flex;flex-direction:column;gap:8px}
+.area h3{margin:0;color:var(--ink)}
+.area p{margin:0;font-size:15px;color:var(--muted)}
+.area.on{background:var(--panel-2);box-shadow:-4px 0 0 0 var(--amber),4px 0 0 0 var(--amber),0 -4px 0 0 var(--amber),0 4px 0 0 var(--amber)}
+.area .btn{margin-top:auto;align-self:flex-start}
+.tags{display:flex;flex-wrap:wrap;gap:4px}
+.tags span{font-size:12px;background:var(--shadow);color:var(--cyan);padding:2px 6px}
+.area .w{font-family:var(--f-term);font-size:20px;color:var(--amber)}
+.area .why{color:var(--ink)}
+.tokens{font-family:var(--f-term);font-size:26px;color:var(--amber)}
+.charter,.report form,.ally-tools{display:grid;gap:8px;align-content:start}
+.charter label,.report label,.ally-tools label{font-size:13px;color:var(--muted);display:block}
+.charter select,.report input,.report select,.report textarea,.ally-tools select{font:16px var(--f-body);color:var(--ink);background:var(--shadow);border:2px solid var(--line);padding:8px 10px;width:100%;min-width:0;border-radius:0}
+.report textarea{min-height:90px;resize:vertical}
+
+/* personas */
+.persona{padding:16px;display:grid;gap:6px}
+.persona h3{color:var(--amber);font-size:14px;margin:0}
+.persona p{margin:0}
+.pz-screens{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px}
+.pz-s{display:grid;gap:8px;align-content:start}
+.pz-mock{background:var(--screen);color:var(--screen-ink);padding:12px;border:4px solid var(--panel-2);min-height:150px}
+.pz-s.right .pz-mock{border-color:var(--ok)}
+.pz-s.wrong .pz-mock{border-color:var(--bad)}
+.pz-t{font-family:var(--f-display);font-size:10px;line-height:1.5;margin:0 0 8px}
+.pz-mock ul{margin:0;padding-left:18px;font-size:14px;display:grid;gap:4px}
+.pz-s .btn{justify-self:start}
+
+/* accesibilidad */
+.ally-app{font-size:calc(15px * var(--z,1));overflow:hidden;display:grid;gap:.5em}
+.ally-app.gray{filter:grayscale(1)}
+.ally-menu{display:flex;flex-wrap:wrap;gap:.8em;border-bottom:2px solid var(--screen-line);padding-bottom:.4em}
+.ally-menu a{font-weight:700}
+.ally-h{font-family:var(--f-display);font-size:.8em;line-height:1.5;margin:.3em 0 0}
+.ally-video{background:#fff;border:2px solid var(--screen-line);padding:.5em;display:grid;gap:.4em}
+.ally-vbox{background:var(--screen-ink);color:var(--pink);display:grid;place-items:center;height:5em}
+.ally-vbox svg{height:3.4em;width:auto}
+.ally-vt{margin:0;font-size:.85em}
+.ally-vctl{display:flex;flex-wrap:wrap;gap:.3em}
+.ally-b{font:700 .8em var(--f-body);background:var(--screen-soft);color:var(--screen-ink);border:2px solid var(--screen-line);padding:.3em .5em;cursor:pointer}
+.ally-vmsg{margin:0;font-size:.85em;min-height:1.2em}
+.screen .ally-app label{font-size:.9em;margin:0}
+.ally-row{display:flex;flex-wrap:nowrap;gap:.4em}
+.screen .ally-app .ally-row input{font-size:1em;flex:0 0 6.5em;width:6.5em;padding:.4em}
+.screen .ally-app input.saved{border-color:#2fa35a;box-shadow:0 0 0 2px #2fa35a}
+.ally-save{flex:0 0 auto;white-space:nowrap;font:700 1em var(--f-body);border:0;padding:.45em .8em;cursor:pointer}
+.ally-help{margin:0;font-size:.85em}
+.ally-icon{justify-self:start;background:var(--screen-soft);border:2px solid var(--screen-line);padding:.3em;cursor:pointer;color:var(--screen-ink);line-height:0}
+.ally-icon svg{width:1.4em;height:1.4em}
+.ally-err{margin:0;background:#ffd3d3;padding:.4em .6em;font-size:.9em}
+.contrast{margin:0;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.contrast span{font:700 18px var(--f-body);padding:2px 10px}
+
+/* release */
+.rel-tabs{display:flex;gap:2px;margin:0 0 10px;flex-wrap:wrap}
+.rel-tabs button{font:700 13px var(--f-body);background:transparent;color:var(--screen-ink);border:0;border-bottom:3px solid transparent;padding:6px;cursor:pointer}
+.rel-tabs button[aria-current="page"]{border-bottom-color:var(--screen-ink)}
+.rel-count{margin:0 0 8px;font-size:14px;font-weight:700}
+.rel-list{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.rel-list li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 8px;align-items:center;background:#fff;border:2px solid var(--screen-line);padding:6px 8px}
+.rel-list li.done .rel-t{text-decoration:line-through;color:#5a4f86}
+.screen .rel-list input[type=checkbox]{width:20px;height:20px;padding:0}
+.rel-t{font-size:14px;overflow-wrap:anywhere;display:grid}
+.rel-t small{color:#5a4f86;font-size:12px}
+.rel-acts{grid-column:1/-1;display:flex;gap:4px;flex-wrap:wrap}
+.rel-acts .mini-btn{padding:4px 7px}
+.overlay-app{position:absolute;inset:0;background:var(--screen-ink);color:var(--screen);display:grid;place-content:center;gap:14px;text-align:center;padding:20px}
+.overlay-app p{font-family:var(--f-term);font-size:24px;line-height:1.1;margin:0}
+.overlay-app .app-btn{background:var(--amber);color:var(--screen-ink)}
+
 @media (max-width:980px){
   .mission{grid-template-columns:minmax(0,1fr)}
   .side{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
@@ -256,6 +353,9 @@ footer p{max-width:90ch;margin:0 0 6px}
   .m-list{grid-template-columns:repeat(auto-fill,minmax(110px,1fr))}
   .req{grid-template-columns:minmax(0,1fr)}
   .hud .bar{width:80px}
+  .duo{grid-template-columns:minmax(0,1fr)}
+  .nav{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px}
+  .nav button{flex:0 0 auto}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
@@ -265,37 +365,43 @@ footer p{max-width:90ch;margin:0 0 6px}
 <header class="hud" id="hud"></header>
 <main class="wrap" id="view"></main>
 <footer class="wrap">
-  <p>Contenido parafraseado y adaptado del <a href="https://www.ministryoftesting.com/insights/test-heuristics-cheat-sheet" target="_blank" rel="noopener">Test Heuristics Cheat Sheet</a> de Ministry of Testing (Simon Tomes, 2022). © 2006 Quality Tree Software, Inc. y © 2022 Ministry of Testing Ltd. Ideas originales de Elisabeth Hendrickson, James Lyndsay y Dale Emery.</p>
+  <p>Contenido parafraseado y adaptado del <a href="https://www.ministryoftesting.com/insights/test-heuristics-cheat-sheet" target="_blank" rel="noopener">Test Heuristics Cheat Sheet</a> de Ministry of Testing (Simon Tomes, 2022). © 2006 Quality Tree Software, Inc. y © 2022 Ministry of Testing Ltd. Ideas originales de Elisabeth Hendrickson, James Lyndsay y Dale Emery, con aportes de Andrea Jensen, Ady Stokes, Callum Akehurst-Ryan, Dave Harrison, Deborah Sherwood, Mark Winteringham y Simon Tomes.</p>
   <p>Las mnemotecnias conservan su nombre original y el crédito a quienes las crearon. TaskPal es una app ficticia: todos sus bugs están plantados a propósito. Tu progreso se guarda solo en este navegador.</p>
 </footer>
 <div class="overlay" id="modal" hidden></div>
 <div class="toasts" id="toasts" aria-live="polite"></div>
+<p class="sr-only" id="live" aria-live="polite"></p>
 
 <script>
 (function(){
 "use strict";
+const DEV=false; // true: valida los datos al iniciar y reporta en consola
 const $=s=>document.querySelector(s);
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const p2=n=>String(n).padStart(2,"0");
 const shuffle=a=>{for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;};
+const reduced=()=>{try{return matchMedia("(prefers-reduced-motion: reduce)").matches;}catch(e){return false;}};
+const clock=()=>{const d=new Date();return `${p2(d.getHours())}:${p2(d.getMinutes())}:${p2(d.getSeconds())}`;};
 
 /* ---------- pixel art ---------- */
 const BUG=[".#....#.","..#..#..",".######.","##.##.##",".######.","#.####.#",".######.","#..##..#"];
 const STAR=["...##...","...##...","########",".######.","..####..",".##..##.","##....##","........"];
+const TRASH=["..####..","########",".######.",".#.##.#.",".#.##.#.",".#.##.#.",".#.##.#.","..####.."];
+const FACE=["..####..",".######.","##.##.##","########","#.####.#","##....##",".######.","..####.."];
 function pix(rows){let r="";rows.forEach((row,y)=>{[...row].forEach((c,x)=>{if(c==="#")r+=`<rect x="${x}" y="${y}" width="1" height="1"/>`;});});
   return `<svg viewBox="0 0 8 8" shape-rendering="crispEdges" aria-hidden="true"><g fill="currentColor">${r}</g></svg>`;}
 
 /* ---------- cartas (Códice) ---------- */
-const CATS=["Datos","Fechas y tiempo","APIs","Especificaciones","Mnemotecnias"];
+const CATS=["Datos","Fechas y tiempo","APIs","Especificaciones","Exploración","Sistema y entorno","Personas y accesibilidad","Mnemotecnias"];
 const CARDS={
  "cadenas-vacias":{n:"Cadenas en blanco y espacios",cat:"Datos",d:"Deja el campo vacío, escribe un solo espacio, varios espacios o espacios al inicio y al final. Muchas validaciones revisan que el texto exista, no que tenga contenido.",ej:"Nombre: «   » (tres espacios).",combo:"Restricciones + método de entrada (pegar texto copiado con espacios).",how:"Nivel 1"},
  "cadenas-largas":{n:"Cadenas largas",cat:"Datos",d:"Prueba longitudes cerca de los tamaños típicos: 255, 256, 257, 1024, 2048 o más caracteres. Los límites de la interfaz, la API y la base de datos rara vez coinciden.",ej:"Un nombre de 300 caracteres.",combo:"Límites + seguir los datos (¿se trunca al exportar?).",how:"Nivel 1"},
  "acentos":{n:"Caracteres acentuados y no latinos",cat:"Datos",d:"Usa acentos, ñ, diéresis y escrituras como 漢字. Revelan errores de codificación en cada salto entre componentes.",ej:"José Núñez Güemes.",combo:"Seguir los datos: captura → búsqueda → reporte → exportación.",how:"Nivel 1"},
  "emojis":{n:"Emojis",cat:"Datos",d:"Un emoji ocupa varios bytes y a veces varios «caracteres». Rompe conteos de longitud, columnas de base de datos y fuentes.",ej:"Nombre: «Ana 🚀».",combo:"Cadenas largas (¿cuántos emojis caben en 50 caracteres?).",how:"Nivel 1"},
  "reglas-dominio":{n:"Viola reglas del dominio",cat:"Datos",d:"Introduce valores que el tipo de dato permite pero el negocio no: una IP 999.999.999.999, un correo sin @, una edad de −1.",ej:"Correo: juan.perez.com",combo:"Límites (¿dónde empieza a ser absurdo?).",how:"Nivel 1"},
- "limites":{n:"Límites",cat:"Datos",d:"Prueba justo en el límite y al acercarte por ambos lados: casi demasiado grande y casi demasiado chico. Ahí viven los errores de uno-de-más (off-by-one).",ej:"Si la regla dice 13–120: prueba 12, 13, 14, 119, 120 y 121.",combo:"Ricitos de Oro: muy grande, muy chico, justo.",how:"Nivel 1"},
+ "limites":{n:"Límites",cat:"Datos",d:"Prueba justo en el límite y al acercarte por ambos lados: casi demasiado grande y casi demasiado chico. Ahí viven los errores de uno-de-más (off-by-one).",ej:"Si la regla dice 13–120: prueba 12, 13, 14, 119, 120 y 121.",combo:"Ricitos de Oro: muy grande, muy chico, justo.",how:"Niveles 1, 2 y 10"},
  "unicidad":{n:"Viola unicidad",cat:"Datos",d:"Intenta crear dos registros que deberían ser únicos: el mismo correo, el mismo ID, el mismo nombre de usuario.",ej:"Registrar ana@correo.mx dos veces.",combo:"Multiusuario: dos sesiones creando lo mismo a la vez.",how:"Nivel 1"},
- "inundacion":{n:"Inundación (flood)",cat:"Datos",d:"Envía muchas solicitudes al mismo tiempo, por ejemplo presionando «Enviar» varias veces seguidas. Revela operaciones duplicadas y colas saturadas.",ej:"Doble clic en «Pagar».",combo:"Interrupciones y hambruna de recursos (red lenta + clics repetidos).",how:"Nivel 1"},
+ "inundacion":{n:"Inundación (flood)",cat:"Datos",d:"Envía muchas solicitudes al mismo tiempo, por ejemplo presionando «Enviar» varias veces seguidas. Revela operaciones duplicadas y colas saturadas.",ej:"Doble clic en «Pagar».",combo:"Interrupciones y hambruna de recursos (red lenta + clics repetidos).",how:"Niveles 1 y 6"},
  "formatos-fecha":{n:"Formatos de fecha distintos",cat:"Fechas y tiempo",d:"Escribe la misma fecha de varias formas: 5 de junio de 2001, 05/06/2001, 06/05/01, 2001-06-05. Cada país lee dd/mm y mm/dd de forma diferente.",ej:"2026-05-06 en un campo que espera dd/mm/aaaa.",combo:"Método de entrada: pegar una fecha copiada de otra app.",how:"Nivel 2"},
  "dias-invalidos":{n:"Días siempre inválidos",cat:"Fechas y tiempo",d:"Algunos días no existen nunca: 30 de febrero, 31 de septiembre, 31 de abril. Revisa que el sistema conozca la longitud real de cada mes.",ej:"31/09/2026",combo:"Límites: el último día de cada mes.",how:"Nivel 2"},
  "bisiesto":{n:"Días bisiestos",cat:"Fechas y tiempo",d:"El 29 de febrero existe solo en años bisiestos. Pruébalo en años bisiestos y no bisiestos, y en operaciones que cruzan esa fecha.",ej:"29/02/2027 (2027 no es bisiesto).",combo:"Secuencias: sumar un año al 29/02/2028.",how:"Nivel 2"},
@@ -306,12 +412,39 @@ const CARDS={
  "vader":{n:"VADER",cat:"APIs",d:"Verbs, Authorisation/Authentication, Data, Errors, Responsiveness: verbos HTTP, quién puede hacer qué, forma de los datos, manejo de errores y tiempos de respuesta.",ej:"DELETE sin token; DELETE con el token de otra persona.",combo:"CRUD + selección: algunos, ningún y todos los permisos.",src:"Stuart Ashman",how:"Nivel 3 o Forja"},
  "poised":{n:"POISED",cat:"APIs",d:"Parameters, Output, Interop, Security, Errors, Data: parámetros, salida, interoperabilidad, seguridad, errores y datos.",ej:"¿El error 500 expone detalles internos? ¿Puedo leer recursos ajenos?",combo:"Seguir los datos entre la API y la interfaz.",src:"Amber Race",how:"Nivel 3 o Forja"},
  "spec-watchlist":{n:"Lista de vigilancia de specs",cat:"Especificaciones",d:"Al leer especificaciones o diseños busca: ambigüedad, palabras evasivas (debería, podría), vaguedad sin dueño ni fecha, jerga o siglas sin explicar, simplificación y complicación excesivas.",ej:"«Se resolverá en una fase posterior».",combo:"WWWWWHKE: quién, qué, cuándo, dónde, por qué y cómo.",src:"Gerard McCann",how:"Nivel 4"},
- "rcrcrc":{n:"RCRCRC",cat:"Mnemotecnias",d:"Para decidir qué probar en regresión: Recent (lo nuevo), Core (lo esencial), Risky (lo riesgoso), Configuration sensitive (lo que depende del entorno), Repaired (lo reparado) y Chronic (lo que siempre se rompe).",ej:"Antes de un release, prioriza el módulo de pagos que se reparó ayer.",combo:"TORCH: usa RCRCRC en la R de riesgos.",src:"Karen N. Johnson",how:"Forja"},
+ "rcrcrc":{n:"RCRCRC",cat:"Mnemotecnias",d:"Para decidir qué probar en regresión: Recent (lo nuevo), Core (lo esencial), Risky (lo riesgoso), Configuration sensitive (lo que depende del entorno), Repaired (lo reparado) y Chronic (lo que siempre se rompe).",ej:"Antes de un release, prioriza el módulo de pagos que se reparó ayer.",combo:"TORCH: usa RCRCRC en la R de riesgos.",src:"Karen N. Johnson",how:"Forja o nivel 7"},
  "failure":{n:"FAILURE",cat:"Mnemotecnias",d:"Para revisar cómo falla un sistema: Functional, Appropriate, Impact, Log, UI, Recovery, Emotions. ¿El error es correcto y apropiado? ¿Qué impacto tiene? ¿Queda registro? ¿Cómo se ve? ¿Se puede recuperar? ¿Qué siente la persona usuaria?",ej:"Un mensaje «Error 0x80004005» falla en Appropriate y en Emotions.",combo:"Interrupciones: provoca la falla y evalúala con FAILURE.",src:"Ben Simo",how:"Forja"},
  "trims":{n:"TRIMS",cat:"Mnemotecnias",d:"Cualidades de una buena prueba automatizada: Targeted (enfocada), Reliable (confiable), Informative (informativa), Maintainable (mantenible) y Speedy (rápida).",ej:"Una prueba que falla 1 de cada 10 veces sin cambios no es Reliable.",combo:"SACRED para revisar sus partes.",src:"Richard Bradshaw",how:"Forja"},
  "sacred":{n:"SACRED",cat:"Mnemotecnias",d:"Las partes de una verificación automatizada: State management, Actions, Codified oracle, Reporting, Execution y Deterministic.",ej:"Sin un oráculo codificado, la prueba solo ejecuta pasos.",combo:"TRIMS para juzgar su calidad.",src:"Richard Bradshaw",how:"Forja"},
- "torch":{n:"TORCH",cat:"Mnemotecnias",d:"Para preparar una sesión exploratoria: Timer (tiempo), Oracles (cómo sabrás que algo está mal), Risks (riesgos), Consider these questions (preguntas guía) y Heuristics (qué heurísticas usarás).",ej:"45 min, oráculo: la spec v0.3, riesgo: fechas, heurística: Ricitos de Oro.",combo:"RCRCRC para elegir riesgos.",src:"Simon Tomes",how:"Forja"},
- "crud":{n:"CRUD",cat:"Mnemotecnias",d:"Create, Read, Update, Delete. Aplica las cuatro operaciones a cada entidad y a sus dependencias.",ej:"Borra la última línea de una factura y vuelve a leerla.",combo:"Dependencias + conteo: un cliente con 0, 1 y muchas facturas.",how:"Forja"}
+ "torch":{n:"TORCH",cat:"Mnemotecnias",d:"Para preparar una sesión exploratoria: Timer (tiempo), Oracles (cómo sabrás que algo está mal), Risks (riesgos), Consider these questions (preguntas guía) y Heuristics (qué heurísticas usarás).",ej:"45 min, oráculo: la spec v0.3, riesgo: fechas, heurística: Ricitos de Oro.",combo:"RCRCRC para elegir riesgos.",src:"Simon Tomes",how:"Forja o charter del nivel 7"},
+ "crud":{n:"CRUD",cat:"Mnemotecnias",d:"Create, Read, Update, Delete. Aplica las cuatro operaciones a cada entidad y a sus dependencias.",ej:"Borra la última línea de una factura y vuelve a leerla.",combo:"Dependencias + conteo: un cliente con 0, 1 y muchas facturas.",how:"Forja o nivel 6"},
+ "multiusuario":{n:"Multiusuario",cat:"Sistema y entorno",d:"Crea, edita o borra lo mismo desde dos cuentas a la vez, o desde una misma cuenta abierta en dos dispositivos. Los conflictos aparecen cuando nadie compara versiones.",ej:"Ana edita la tarea 3 en el celular y en la laptop antes de sincronizar.",combo:"Interrupciones: sincroniza justo después de perder la red.",how:"Nivel 6"},
+ "interrupciones":{n:"Interrupciones",cat:"Sistema y entorno",d:"Corta un proceso a la mitad: cerrar sesión, apagar, reiniciar, matar la app, perder la red, suspender, agotar el tiempo o cancelar. Revisa en qué estado quedan los datos.",ej:"Activar el modo avión mientras dice «Guardando…».",combo:"Análisis de estados: ¿a qué estado vuelve tras cada corte?",how:"Nivel 6"},
+ "touchpoints":{n:"Puntos de contacto (TouchPoints)",cat:"Exploración",d:"Ubica interfaces públicas o internas que te dejen observar o controlar el sistema: registros, vistas de administración, bases de datos, APIs. Úsalas para provocar, vigilar y verificar.",ej:"Revisar la tabla del servidor después de cada guardado.",combo:"Seguir los datos: verifica el dato en cada punto de contacto.",how:"Nivel 6"},
+ "estados":{n:"Análisis de estados",cat:"Exploración",d:"Identifica los estados posibles y las transiciones entre ellos, y dibújalos como diagrama o tabla. Después busca transiciones prohibidas o que faltan.",ej:"Sesión cerrada → ¿se puede seguir guardando?",combo:"Secuencias e interrupciones.",how:"Niveles 6 y 10"},
+ "ordenamiento":{n:"Ordenamiento",cat:"Datos",d:"Ordena por texto y por número, con mayúsculas, acentos y números al inicio. Si hay paginación, revisa que el orden se mantenga entre páginas.",ej:"¿«10 Pagar» queda antes que «2 Comprar»?",combo:"Caracteres acentuados: ¿dónde queda «Ñu»?",how:"Nivel 6"},
+ "teclado":{n:"Accesibilidad por teclado",cat:"Personas y accesibilidad",d:"Recorre todo solo con el teclado: el foco debe verse, seguir un orden lógico, alcanzar cada función y nunca quedar atrapado en menús o ventanas. Un enlace para saltar al contenido ayuda.",ej:"Tab dentro de un menú que nunca te deja salir.",combo:"Seen and Heard: ¿lo enfocado se anuncia bien?",how:"Nivel 9"},
+ "contexto":{n:"Contexto y contenido accesible",cat:"Personas y accesibilidad",d:"Revisa etiquetas de formularios, nombres de botones, textos alternativos, idioma, lenguaje claro, contraste suficiente, zoom al 200 % y que el éxito no se indique solo con color.",ej:"Un ícono de basura sin nombre; un aviso verde sin texto.",combo:"Configuraciones: zoom, tamaño de letra, modo oscuro.",how:"Nivel 9"},
+ "seen-heard":{n:"Seen and Heard",cat:"Personas y accesibilidad",d:"Todo lo que se ve debería poder escucharse con un lector de pantalla, y todo lo que se escucha debería poder leerse: transcripciones, subtítulos y audiodescripciones.",ej:"Un video de bienvenida sin subtítulos.",combo:"Contexto accesible: nombres claros para cada control.",src:"Ady Stokes",how:"Nivel 9"},
+ "enanos":{n:"Siete enanos",cat:"Personas y accesibilidad",d:"Usa los rasgos de los siete enanos del cuento como personas usuarias: Gruñón, Feliz, Dormilón, Tímido, Estornudo, Tontín y Doc. Cada rasgo sugiere otra forma de usar (y romper) la app. Las interpretaciones del nivel 8 son de este juego.",ej:"Gruñón no espera: ¿hay pantallas de carga sin fin?",combo:"Diversidad e inclusión para perfiles reales.",src:"Cassandra H. Leung",how:"Nivel 8"},
+ "diversidad":{n:"Diversidad e inclusión",cat:"Personas y accesibilidad",d:"Pregúntate si funciona para ti, para otras personas y para alguien en quien nunca habías pensado: otra edad, otra conexión, otra forma de ver, oír o moverse.",ej:"¿Cómo usa la app alguien con 3G y datos caros?",combo:"Siete enanos y accesibilidad.",src:"Callum Akehurst-Ryan y Ash Coleman",how:"Nivel 8"},
+ "configuraciones":{n:"Configuraciones",cat:"Sistema y entorno",d:"Varía la configuración del entorno: resolución, zoom, red, memoria, disco, idioma o región. Aplica conteo a los periféricos: ninguno, uno, muchos.",ej:"La misma pantalla con zoom al 200 %.",combo:"Hambruna de recursos: poco disco y red lenta.",how:"Niveles 9 y 10"},
+ "starvation":{n:"Hambruna de recursos",cat:"Sistema y entorno",d:"Lleva CPU, memoria, red o disco al máximo de su capacidad, o déjalos casi vacíos, y observa cómo responde el sistema y qué avisa.",ej:"Adjuntar una foto con 5 MB libres.",combo:"Puntos de contacto: revisa los registros del sistema.",how:"Nivel 10"},
+ "posicion":{n:"Posición",cat:"Datos",d:"Actúa al principio, en medio y al final: de una lista, de un texto, de un archivo. Los extremos esconden errores de índice.",ej:"Borrar la última fila de la lista.",combo:"Conteo: listas de 0, 1 y muchos elementos.",how:"Nivel 10"},
+ "seleccion":{n:"Selección",cat:"Datos",d:"Prueba con algunos, ninguno y todos: elementos seleccionados, permisos, filtros u opciones.",ej:"Archivar con ninguna tarea marcada.",combo:"Conteo y posición.",how:"Nivel 10"},
+ "conteo":{n:"Conteo",cat:"Datos",d:"Prueba con cero, uno y muchos: transacciones, elementos, adjuntos, personas. El cero y el uno suelen tener caminos de código especiales.",ej:"Una acción en lote con 0 tareas seleccionadas.",combo:"Selección y dependencias.",how:"Nivel 10"},
+ "dependencias":{n:"Dependencias",cat:"Sistema y entorno",d:"Encuentra relaciones de tipo «tiene un» (una tarea tiene una etiqueta, un cliente tiene facturas) y aplícales CRUD, conteo, posición y selección.",ej:"Borrar una etiqueta que usan tres tareas.",combo:"CRUD sobre cada relación.",how:"Nivel 10"},
+ "restricciones":{n:"Restricciones",cat:"Datos",d:"Intenta romper las reglas: campos obligatorios vacíos, combinaciones inválidas, nombres o IDs duplicados, longitudes máximas. Combínala con distintos métodos de entrada.",ej:"Un título de 60 caracteres donde el máximo es 40.",combo:"Método de entrada: pegar o importar.",how:"Nivel 10"},
+ "metodo-entrada":{n:"Método de entrada",cat:"Datos",d:"Mete los mismos datos por caminos distintos: teclear, copiar y pegar, importar, arrastrar y soltar, o usar otra interfaz (pantalla contra API).",ej:"Pegar un texto que no podrías teclear completo.",combo:"Restricciones: ¿todas las vías validan igual?",how:"Nivel 10"},
+ "secuencias":{n:"Secuencias",cat:"Datos",d:"Cambia el orden de las operaciones: deshacer y rehacer, invertir, combinar, repetir o hacer dos cosas al mismo tiempo.",ej:"Completar, desmarcar y volver a completar.",combo:"Análisis de estados.",how:"Nivel 10"},
+ "seguir-datos":{n:"Seguir los datos",cat:"Exploración",d:"Lleva un dato por una cadena de acciones (capturar, buscar, reportar, exportar, importar, actualizar, ver) y verifica su integridad en cada paso.",ej:"Renombrar una tarea y revisar la exportación.",combo:"Puntos de contacto para verificar cada paso.",how:"Nivel 10"},
+ "goldilocks":{n:"Ricitos de Oro (Goldilocks)",cat:"Exploración",d:"Para cada valor prueba demasiado grande, demasiado pequeño y justo. Complementa a los límites: busca también los extremos absurdos.",ej:"Un pomodoro de 0 minutos.",combo:"Límites y análisis de variables.",how:"Nivel 10"},
+ "variables":{n:"Análisis de variables",cat:"Exploración",d:"Encuentra todo lo que puede cambiar, incluidas las variables ocultas o sutiles (la hora, el espacio libre, el idioma), y varíalo a propósito.",ej:"La duración de un pomodoro es una variable: ¿qué valores admite?",combo:"Ricitos de Oro y límites.",how:"Nivel 10"},
+ "mapas":{n:"Hacer mapas (Map Making)",cat:"Exploración",d:"Elige un estado base, da un paso en una dirección, regresa a la base y repite. Así recorres el producto de forma sistemática y construyes un mapa de lo explorado.",ej:"Desde la lista: abrir cada pantalla y volver.",combo:"RCRCRC para decidir qué zonas del mapa visitar primero.",how:"Nivel 7"},
+ "wwwwwhke":{n:"WWWWWHKE",cat:"Mnemotecnias",d:"Preguntas para entender un trabajo (se pronuncia como «wiki»): Who, What, When, Where, Why, How, y lo que tu Knowledge & Experience te hace preguntar.",ej:"¿Para quién es esta exportación y por qué se necesita ahora?",combo:"Lista de vigilancia de specs.",src:"Darren McMillan",how:"Forja"},
+ "mcoaster":{n:"MCOASTER",cat:"Mnemotecnias",d:"Lista para planear o reportar pruebas: Mission, Coverage, Obstacles, Audience, Status, Techniques, Environment, Risk.",ej:"Antes del reporte diario: ¿qué obstáculos frenaron la cobertura?",combo:"TORCH para preparar cada sesión.",src:"Michael Kelly",how:"Forja"},
+ "tuttu":{n:"TuTTu / TaTTa",cat:"Exploración",d:"Distingue entre probar la interfaz y probar a través de la interfaz (TuTTu), y entre probar la API y probar a través de la API (TaTTa). Cada capa merece sus propias pruebas.",ej:"La pantalla rechaza un título vacío; ¿la API también?",combo:"BINMEN y VADER para la capa de API.",src:"Mark Winteringham",how:"Completar el nivel 3"},
+ "lyndsay":{n:"Marcos de Lyndsay",cat:"Exploración",d:"Juicio: busca inconsistencias, ausencias y extras frente a referencias internas, externas o culturales. Observaciones: mira entradas, salidas y vínculos; el flujo; y entrada, proceso y salida.",ej:"Una spec que promete «rápido» sin decir cuánto: una ausencia.",combo:"Lista de vigilancia de specs.",src:"James Lyndsay",how:"Nivel 4 con 8 de 8"}
 };
 const CARD_ORDER=Object.keys(CARDS);
 
@@ -327,36 +460,56 @@ const BUGS={
  "r-unico":{m:"registro",t:"Correo duplicado",obs:"Se creó una segunda cuenta con un correo que ya existía.",opts:["Viola unicidad","Límites","Caracteres acentuados y no latinos","Formatos de fecha distintos"],ok:["Viola unicidad"],why:"Las reglas dicen «un correo por cuenta», pero nadie lo verifica antes de guardar. Repite valores que deberían ser únicos."},
  "r-flood":{m:"registro",t:"Doble clic, doble cuenta",obs:"Dos clics rápidos en «Crear cuenta» crearon dos cuentas idénticas.",opts:["Inundación (flood)","Viola unicidad","Días siempre inválidos","Emojis"],ok:["Inundación (flood)","Viola unicidad"],why:"El botón no se desactiva mientras se procesa la solicitud. Inundar con envíos repetidos revela operaciones duplicadas, el mismo hueco que la unicidad."},
  "f-iso":{m:"recordatorios",t:"Fecha ISO mal leída",obs:"Escribiste la fecha como AAAA-MM-DD y el recordatorio quedó para una fecha absurda.",opts:["Formatos de fecha distintos","Días bisiestos","am/pm y 24 horas","Cadenas largas"],ok:["Formatos de fecha distintos"],why:"La app asume día-mes-año sin importar el separador. El formato ISO es muy común al pegar fechas de otros sistemas."},
- "f-31sep":{m:"recordatorios",t:"31 de septiembre",obs:"La app aceptó el 31 de septiembre, un día que no existe.",opts:["Días siempre inválidos","Cruce de zonas horarias","am/pm y 24 horas","Emojis"],ok:["Días siempre inválidos","Límites"],why:"La tabla de días por mes tiene un error de captura: septiembre con 31 días. Prueba el último día de cada mes."},
+ "f-31sep":{m:"recordatorios",t:"31 de septiembre",obs:"La app aceptó el 31 de septiembre, un día que no existe.",opts:["Días siempre inválidos","Cruce de zonas horarias","am/pm y 24 horas","Límites"],ok:["Días siempre inválidos","Límites"],why:"La tabla de días por mes tiene un error de captura: septiembre con 31 días. Prueba el último día de cada mes."},
  "f-bisiesto":{m:"recordatorios",t:"29 de febrero imposible",obs:"La app aceptó el 29 de febrero en un año que no es bisiesto.",opts:["Días bisiestos","Formatos de fecha distintos","Cambio de horario de verano","Viola unicidad"],ok:["Días bisiestos"],why:"Febrero tiene 29 días fijos en la tabla y nunca se calcula si el año es bisiesto."},
  "f-ampm":{m:"recordatorios",t:"Las 12 confundidas",obs:"Una hora «12:xx am/pm» se convirtió mal: la medianoche quedó como mediodía o apareció una hora 24.",opts:["am/pm y 24 horas","Cruce de zonas horarias","Formatos de fecha distintos","Límites"],ok:["am/pm y 24 horas"],why:"La conversión suma 12 a toda hora pm y deja igual toda hora am. Las 12 son justo la excepción."},
  "f-zona":{m:"recordatorios",t:"Zona horaria ignorada",obs:"Elegiste otra zona horaria, pero la hora en tu dispositivo es idéntica a la del evento: no hubo conversión.",opts:["Cruce de zonas horarias","Cambio de horario de verano","am/pm y 24 horas","Cadenas en blanco y espacios"],ok:["Cruce de zonas horarias"],why:"La app guarda la zona como etiqueta pero nunca la usa para convertir. Cada persona invitada vería una hora distinta."},
  "f-dst":{m:"recordatorios",t:"Hora que no existe",obs:"La app programó un recordatorio a una hora que ese día no existe por el cambio de horario de verano.",opts:["Cambio de horario de verano","Días bisiestos","Formatos de fecha distintos","Inundación (flood)"],ok:["Cambio de horario de verano"],why:"Ese día los relojes saltan de 01:59 a 03:00. El recordatorio nunca sonará, o sonará a una hora inesperada."},
- "a-del":{m:"api",t:"DELETE sin token",obs:"Un DELETE sin token respondió 204: la tarea se borró sin autenticación.",opts:["VADER · Autorización","BINMEN · Vacío","POISED · Interop","Inundación (flood)"],ok:["VADER · Autorización","POISED · Seguridad"],why:"El middleware de autenticación se registró para GET, POST y PUT, pero no para DELETE. Prueba cada verbo con cada tipo de credencial."},
+ "a-del":{m:"api",t:"DELETE sin token",obs:"Un DELETE sin token respondió 204: la tarea se borró sin autenticación.",opts:["VADER · Autorización","BINMEN · Vacío","POISED · Interop","POISED · Seguridad"],ok:["VADER · Autorización","POISED · Seguridad"],why:"El middleware de autenticación se registró para GET, POST y PUT, pero no para DELETE. Prueba cada verbo con cada tipo de credencial."},
  "a-idor":{m:"api",t:"Tarea ajena expuesta",obs:"Con el token de Ana obtuviste una tarea que es de Beto.",opts:["POISED · Seguridad","VADER · Autorización","BINMEN · Negativo","BINMEN · Límite"],ok:["POISED · Seguridad","VADER · Autorización"],why:"La API verifica que exista un token, pero no que la tarea pertenezca a quien la pide. Es una referencia directa insegura a objetos (IDOR)."},
  "a-vacio":{m:"api",t:"Tarea sin título",obs:"Un POST con título vacío creó la tarea y respondió 201.",opts:["BINMEN · Vacío","BINMEN · Método","VADER · Tiempo de respuesta","POISED · Interop"],ok:["BINMEN · Vacío"],why:"La validación revisa que el campo exista y sea texto, pero no que tenga contenido."},
  "a-null":{m:"api",t:"null que revienta",obs:"Con titulo: null el servidor respondió 500 y mostró un stack trace interno.",opts:["BINMEN · NULL","POISED · Errores","BINMEN · Límite","VADER · Verbos"],ok:["BINMEN · NULL","POISED · Errores"],why:"El código llama .trim() sobre null. Además, el error expone rutas y líneas internas del servidor."},
- "a-neg":{m:"api",t:"limit negativo",obs:"limit=-1 devolvió las tareas de todas las personas, con hashes de contraseña incluidos.",opts:["BINMEN · Negativo","BINMEN · Método","VADER · Verbos","BINMEN · Vacío"],ok:["BINMEN · Negativo","POISED · Seguridad"],why:"Un límite negativo se pasa tal cual a la consulta y desactiva tanto la paginación como el filtro por dueño."},
+ "a-neg":{m:"api",t:"limit negativo",obs:"limit=-1 devolvió las tareas de todas las personas, con hashes de contraseña incluidos.",opts:["BINMEN · Negativo","BINMEN · Método","VADER · Verbos","POISED · Seguridad"],ok:["BINMEN · Negativo","POISED · Seguridad"],why:"Un límite negativo se pasa tal cual a la consulta y desactiva tanto la paginación como el filtro por dueño."},
  "a-lim":{m:"api",t:"Máximo documentado rechazado",obs:"limit=1000 respondió 400, aunque la documentación dice que el máximo es 1000.",opts:["BINMEN · Límite","BINMEN · NULL","POISED · Seguridad","VADER · Autorización"],ok:["BINMEN · Límite"],why:"El código usa «≥ 1000» donde debía usar «> 1000». Prueba exactamente el valor documentado."},
- "a-patch":{m:"api",t:"Verbo no documentado",obs:"PATCH respondió 500 en lugar de 405 (método no permitido).",opts:["BINMEN · Método","VADER · Verbos","POISED · Seguridad","BINMEN · Negativo"],ok:["BINMEN · Método","VADER · Verbos"],why:"El router declara PATCH pero nadie escribió su manejador. Prueba verbos que la documentación no menciona."}
+ "a-patch":{m:"api",t:"Verbo no documentado",obs:"PATCH respondió 500 en lugar de 405 (método no permitido).",opts:["BINMEN · Método","VADER · Verbos","POISED · Seguridad","BINMEN · Negativo"],ok:["BINMEN · Método","VADER · Verbos"],why:"El router declara PATCH pero nadie escribió su manejador. Prueba verbos que la documentación no menciona."},
+ "s-lost":{m:"sesiones",t:"Cambio perdido sin aviso",obs:"Los dos teléfonos editaron la misma tarea; el último en guardar borró el cambio del otro y nadie recibió aviso.",opts:["Multiusuario","Inundación (flood)","Ordenamiento","Días bisiestos"],ok:["Multiusuario"],why:"El servidor acepta cualquier guardado sin comparar versiones. Con dos sesiones de la misma cuenta, la segunda edición pisa la primera: una actualización perdida."},
+ "s-revive":{m:"sesiones",t:"Tarea resucitada",obs:"Una tarea borrada en un teléfono volvió a aparecer después de editarla en el otro.",opts:["Multiusuario","CRUD","Cadenas largas","Cruce de zonas horarias"],ok:["Multiusuario","CRUD"],why:"Guardar hace un «crear o actualizar» sin revisar si la tarea fue borrada. Combinar Delete en una sesión con Update en otra revela registros zombis."},
+ "s-flood":{m:"sesiones",t:"Invitaciones repetidas",obs:"Varios clics rápidos en «Compartir con Beto» mandaron una invitación por cada clic.",opts:["Inundación (flood)","Ordenamiento","Viola reglas del dominio","Cambio de horario de verano"],ok:["Inundación (flood)"],why:"El botón no se desactiva y el servidor no descarta invitaciones duplicadas. Beto recibe el mismo correo una y otra vez."},
+ "s-partial":{m:"sesiones",t:"Guardado a medias",obs:"Se cortó la conexión durante el guardado: el servidor quedó con el título nuevo y la prioridad vieja.",opts:["Interrupciones","Puntos de contacto (TouchPoints)","Emojis","Días siempre inválidos"],ok:["Interrupciones","Puntos de contacto (TouchPoints)"],why:"El guardado se hace en dos solicitudes separadas y no es atómico. Interrumpirlo a la mitad deja datos inconsistentes, y la vista del servidor, un punto de contacto, lo revela."},
+ "s-logout":{m:"sesiones",t:"Sesión que no se cierra",obs:"Cerraste sesión «en todos los dispositivos», pero el otro teléfono siguió operando como si nada.",opts:["Interrupciones","Análisis de estados","Cadenas en blanco y espacios","Formatos de fecha distintos"],ok:["Interrupciones","Análisis de estados"],why:"El cierre global solo borra la sesión local; el servidor nunca invalida los tokens de los demás dispositivos. «Sesión cerrada» debería impedir cualquier acción."},
+ "s-sort":{m:"sesiones",t:"Orden alfabético engañoso",obs:"Al ordenar por título, «10 Pagar renta» quedó antes que «2 Comprar leche».",opts:["Ordenamiento","Multiusuario","Límites","Caracteres acentuados y no latinos"],ok:["Ordenamiento"],why:"Se ordena como texto, carácter por carácter: «1» va antes que «2». Prueba orden alfabético contra numérico y, si hay páginas, el orden entre páginas."},
+ "x-trap":{m:"a11y",t:"Trampa de teclado",obs:"Con Tab el foco da vueltas dentro del menú y nunca llega al resto de la pantalla.",opts:["Accesibilidad por teclado","Seen and Heard","Inundación (flood)","Ordenamiento"],ok:["Accesibilidad por teclado"],why:"El menú captura Tab para ciclar entre sus enlaces y no deja salir. Quien navega solo con teclado queda atrapado: todo debe poder recorrerse y abandonarse con el teclado."},
+ "x-name":{m:"a11y",t:"Botón sin nombre",obs:"El lector de pantalla anunció solo «botón» en el ícono del bote de basura.",opts:["Contexto y contenido accesible","Seen and Heard","Método de entrada","Conteo"],ok:["Contexto y contenido accesible","Seen and Heard"],why:"El botón es un dibujo sin texto ni aria-label. Lo que se ve debe poder escucharse: cada control necesita un nombre accesible."},
+ "x-color":{m:"a11y",t:"Éxito solo en verde",obs:"Al guardar, el único aviso es un borde verde. En escala de grises no hay forma de saber si funcionó.",opts:["Contexto y contenido accesible","Cruce de zonas horarias","Selección","Interrupciones"],ok:["Contexto y contenido accesible"],why:"El estado depende solo del color. Hace falta algo más: un ícono, un texto «Guardado» o un anuncio para el lector de pantalla."},
+ "x-zoom":{m:"a11y",t:"Guardar fuera de la pantalla",obs:"Con zoom al 200 % el botón Guardar quedó cortado fuera de la vista.",opts:["Contexto y contenido accesible","Configuraciones","Emojis","Secuencias"],ok:["Contexto y contenido accesible","Configuraciones"],why:"La fila del formulario no se acomoda: tiene un ancho fijo y no permite saltos de línea. Con texto ampliado al 200 % todo debe seguir visible y usable."},
+ "x-cc":{m:"a11y",t:"Video sin subtítulos",obs:"El video de bienvenida no tiene subtítulos ni transcripción: sin sonido no se entiende nada.",opts:["Seen and Heard","Accesibilidad por teclado","Viola unicidad","Hambruna de recursos"],ok:["Seen and Heard"],why:"Todo lo que se escucha debería poder leerse. Sin subtítulos ni transcripción, quien no oye (o no puede subir el volumen) se pierde el contenido."},
+ "x-contrast":{m:"a11y",t:"Texto casi invisible",obs:"El medidor marcó un contraste muy bajo en el texto de ayuda; lo mínimo recomendado para texto normal es 4.5:1.",opts:["Contexto y contenido accesible","Ricitos de Oro","Ordenamiento","Multiusuario"],ok:["Contexto y contenido accesible"],why:"Un gris lila claro sobre fondo lila claro se pierde, sobre todo con poca luz o vista cansada. El contraste suficiente es parte del contenido accesible."},
+ "z-paste":{m:"release",t:"Límite saltado al pegar",obs:"Escribiendo, el título se detiene en 40 caracteres; pegando texto se guardó uno más largo.",opts:["Método de entrada","Restricciones","Emojis","Posición"],ok:["Método de entrada","Restricciones"],why:"El límite se aplica solo a las teclas. Pegar, importar, arrastrar o usar la API son otros métodos de entrada que se saltan la restricción."},
+ "z-last":{m:"release",t:"Borra la equivocada",obs:"Al borrar la última tarea de la lista, desapareció la primera.",opts:["Posición","Selección","Conteo","Seguir los datos"],ok:["Posición"],why:"El índice se calcula mal justo en el extremo final. Prueba al inicio, en medio y al final."},
+ "z-none":{m:"release",t:"Archivar nada archiva todo",obs:"Con ninguna tarea seleccionada, «Archivar seleccionadas» archivó todas.",opts:["Selección","Conteo","Posición","Dependencias"],ok:["Selección","Conteo"],why:"Una lista vacía de seleccionadas se interpreta como «sin filtro». Prueba algunas, ninguna y todas; cero, una y muchas."},
+ "z-orphan":{m:"release",t:"Etiqueta fantasma",obs:"Borraste una etiqueta en uso y sus tareas ahora dicen «undefined».",opts:["Dependencias","Secuencias","Método de entrada","Cambio de horario de verano"],ok:["Dependencias"],why:"Las tareas «tienen una» etiqueta; al borrarla nadie actualiza a quienes dependen de ella. Aplica CRUD a cada relación."},
+ "z-streak":{m:"release",t:"Racha inflada",obs:"Completar, desmarcar y volver a completar la misma tarea sumó dos veces a «Completadas hoy».",opts:["Secuencias","Análisis de estados","Ricitos de Oro","Restricciones"],ok:["Secuencias","Análisis de estados"],why:"Desmarcar no resta y marcar siempre suma: el contador no modela la transición completada → pendiente. Varía el orden: deshacer, rehacer, invertir."},
+ "z-export":{m:"release",t:"Exportación desactualizada",obs:"Renombraste una tarea y el CSV exportado conserva el título viejo.",opts:["Seguir los datos","Posición","Inundación (flood)","Seen and Heard"],ok:["Seguir los datos"],why:"La exportación lee una copia en caché que no se actualiza al renombrar. Sigue un dato por todo su recorrido: captura, edición, búsqueda, exportación."},
+ "z-storage":{m:"release",t:"Adjunto perdido",obs:"Con poco espacio libre, la app dijo «Adjunto guardado ✓», pero el registro del sistema muestra que se descartó.",opts:["Hambruna de recursos","Configuraciones","Ordenamiento","Viola unicidad"],ok:["Hambruna de recursos","Configuraciones"],why:"La app no revisa el espacio disponible ni maneja el error de disco lleno. Lleva los recursos al límite y cambia la configuración del dispositivo."},
+ "z-pomo":{m:"release",t:"Pomodoro infinito",obs:"Con una duración de 0 minutos, el contador de pomodoros se disparó sin parar.",opts:["Ricitos de Oro","Análisis de variables","Multiusuario","Selección"],ok:["Ricitos de Oro","Análisis de variables"],why:"La validación rechaza más de 60 y menos de 0, pero no el 0. Identifica cada variable (aquí, la duración) y prueba demasiado grande, demasiado pequeño y justo."}
 };
+const TOTAL_BUGS=Object.keys(BUGS).length;
 const LABEL={
  "Cadenas en blanco y espacios":"cadenas-vacias","Cadenas largas":"cadenas-largas","Caracteres acentuados y no latinos":"acentos","Emojis":"emojis","Viola reglas del dominio":"reglas-dominio","Límites":"limites","Viola unicidad":"unicidad","Inundación (flood)":"inundacion",
  "Formatos de fecha distintos":"formatos-fecha","Días siempre inválidos":"dias-invalidos","Días bisiestos":"bisiesto","am/pm y 24 horas":"am-pm","Cruce de zonas horarias":"zonas","Cambio de horario de verano":"horario-verano",
- "VADER · Autorización":"vader","VADER · Verbos":"vader","VADER · Tiempo de respuesta":"vader","BINMEN · Límite":"binmen","BINMEN · NULL":"binmen","BINMEN · Método":"binmen","BINMEN · Vacío":"binmen","BINMEN · Negativo":"binmen","POISED · Seguridad":"poised","POISED · Errores":"poised","POISED · Interop":"poised"
+ "VADER · Autorización":"vader","VADER · Verbos":"vader","VADER · Tiempo de respuesta":"vader","BINMEN · Límite":"binmen","BINMEN · NULL":"binmen","BINMEN · Método":"binmen","BINMEN · Vacío":"binmen","BINMEN · Negativo":"binmen","POISED · Seguridad":"poised","POISED · Errores":"poised","POISED · Interop":"poised",
+ "Multiusuario":"multiusuario","CRUD":"crud","Interrupciones":"interrupciones","Puntos de contacto (TouchPoints)":"touchpoints","Análisis de estados":"estados","Ordenamiento":"ordenamiento",
+ "Accesibilidad por teclado":"teclado","Contexto y contenido accesible":"contexto","Seen and Heard":"seen-heard","Configuraciones":"configuraciones",
+ "Método de entrada":"metodo-entrada","Restricciones":"restricciones","Posición":"posicion","Selección":"seleccion","Conteo":"conteo","Dependencias":"dependencias","Secuencias":"secuencias","Seguir los datos":"seguir-datos","Hambruna de recursos":"starvation","Ricitos de Oro":"goldilocks","Análisis de variables":"variables"
 };
 const HINTS={
  registro:["Lee las reglas en pantalla: cada regla es una invitación a probar sus bordes.","El campo de nombre esconde cuatro bugs. Piensa en qué tipos de texto existen: vacío, largo, con acentos, con emojis.","Revisa la vista de administración después de cada registro. ¿Qué no debería repetirse?","¿Qué pasa si presionas «Crear cuenta» dos veces muy rápido?"],
  recordatorios:["El formato pedido es dd/mm/aaaa. ¿Qué otros formatos escribe la gente?","Febrero y septiembre esconden algo. Revisa el último día de cada uno.","Prueba las 12 en punto con am y con pm.","Cambia la zona horaria y compara las dos horas. Luego investiga el 8 de marzo de 2026 en Nueva York."],
- api:["Cambia el token a «Sin token» y prueba cada verbo.","Usa el token de Ana para pedir tareas que no son suyas (6 a 9).","En POST prueba un título vacío y un título null.","Juega con limit: valores negativos y exactamente el máximo documentado. Y prueba un verbo que no aparezca en la documentación."]
+ api:["Cambia el token a «Sin token» y prueba cada verbo.","Usa el token de Ana para pedir tareas que no son suyas (6 a 9).","En POST prueba un título vacío y un título null.","Juega con limit: valores negativos y exactamente el máximo documentado. Y prueba un verbo que no aparezca en la documentación."],
+ sesiones:["Tienes dos teléfonos con la misma cuenta. ¿Qué pasa si los dos cambian la misma tarea antes de sincronizar?","Borra algo en un teléfono y, sin sincronizar el otro, edítalo ahí.","Los botones que mandan algo a otra persona merecen varios clics seguidos. Y prueba ordenar la lista.","Cambia título y prioridad, guarda y activa el modo avión mientras dice «Guardando…». Luego cierra sesión en todos los dispositivos y sigue usando el otro teléfono."],
+ a11y:["Deja el ratón: recorre la app solo con Tab y Shift+Tab. ¿Puedes salir de todas partes?","Enciende el lector de pantalla simulado y visita cada control. ¿Todo se anuncia con un nombre?","Guarda una tarea con la escala de grises encendida. Y prueba el zoom más grande.","Hay un video y un texto pálido: busca los subtítulos y usa el medidor de contraste."],
+ release:["Aquí se mezclan todas las categorías: recorre cada pestaña con tus heurísticas favoritas.","En la lista, borra en distintas posiciones y archiva con distintas selecciones.","Completa, desmarca y vuelve a completar. Renombra algo y exporta. Borra una etiqueta en uso.","Pega un texto largo en el título, prueba un pomodoro de 0 minutos y adjunta una foto con poco espacio libre."]
 };
-const LEVELS=[
- {id:"registro",n:"Registro de cuenta",d:"Ataques con cadenas, números y reglas de negocio sobre un formulario de alta."},
- {id:"recordatorios",n:"Recordatorios",d:"Fechas, horas, años bisiestos y zonas horarias."},
- {id:"api",n:"Consola de la API",d:"Rompe la API REST de TaskPal con BINMEN, VADER y POISED."},
- {id:"detective",n:"Detective de specs",d:"Marca las frases de una especificación que nadie podría probar."},
- {id:"forja",n:"Forja de mnemotecnias",d:"Arma letra por letra los acrónimos clásicos de las heurísticas."}
-];
 const WISDOM=[
  "Una prueba es un experimento: busca revelar información o responder una pregunta concreta sobre el sistema.",
  "Los stakeholders tienen preguntas; quien prueba trae respuestas.",
@@ -400,29 +553,129 @@ const MNEMO=[
  {id:"trims",acr:"TRIMS",w:[["Targeted","enfocada"],["Reliable","confiable"],["Informative","informativa"],["Maintainable","mantenible"],["Speedy","rápida"]],x:[["Repeatable","repetible"],["Scalable","escalable"]]},
  {id:"sacred",acr:"SACRED",w:[["State management","manejo de estado"],["Actions","acciones"],["Codified oracle","oráculo codificado"],["Reporting","reporte"],["Execution","ejecución"],["Deterministic","determinista"]],x:[["Coverage","cobertura"],["Assertions","aserciones"]]},
  {id:"torch",acr:"TORCH",w:[["Timer","tiempo"],["Oracles","oráculos"],["Risks","riesgos"],["Consider these questions","preguntas guía"],["Heuristics","heurísticas"]],x:[["Tools","herramientas"],["Reporting","reporte"]]},
- {id:"crud",acr:"CRUD",w:[["Create","crear"],["Read","leer"],["Update","actualizar"],["Delete","borrar"]],x:[["Copy","copiar"],["Revert","revertir"]]}
+ {id:"crud",acr:"CRUD",w:[["Create","crear"],["Read","leer"],["Update","actualizar"],["Delete","borrar"]],x:[["Copy","copiar"],["Revert","revertir"]]},
+ {id:"mcoaster",acr:"MCOASTER",w:[["Mission","misión"],["Coverage","cobertura"],["Obstacles","obstáculos"],["Audience","audiencia"],["Status","estado"],["Techniques","técnicas"],["Environment","entorno"],["Risk","riesgo"]],x:[["Metrics","métricas"],["Schedule","calendario"]]},
+ {id:"wwwwwhke",acr:"WWWWWHKE",w:[["Who","quién"],["What","qué"],["When","cuándo"],["Where","dónde"],["Why","por qué"],["How","cómo"],["Knowledge","conocimiento"],["Experience","experiencia"]],x:[["Which","cuál"],["Evidence","evidencia"]]}
+];
+
+/* ---------- personas (nivel 8) ---------- */
+// s[0] es siempre la pantalla que falla y r[0] la razón correcta; la vista las baraja.
+const PERSONAS=[
+ {id:"grunon",kind:"enanos",n:"Gruñón",d:"Impaciente y de mal humor: si algo tarda o estorba, cierra la app.",
+  s:[{t:"Sincronizando",f:["Pantalla completa con un reloj de arena","Sin barra de avance ni botón Cancelar","Bloquea la app hasta 45 segundos"]},{t:"Lista de tareas",f:["Búsqueda arriba","Tareas de hoy primero","Botón + siempre visible"]},{t:"Ajustes",f:["Seis interruptores con nombre claro","Se guardan solos","Botón Atrás"]}],
+  r:["Bloquea sin mostrar avance ni dar salida: alguien impaciente cierra la app y no vuelve.","Usa demasiados colores.","El reloj de arena es un ícono anticuado."],
+  why:"La espera opaca es lo que más castiga la impaciencia. Mostrar avance, permitir cancelar o sincronizar en segundo plano reduce la frustración."},
+ {id:"feliz",kind:"enanos",n:"Feliz",d:"Optimista: acepta todo sin leer y confía en que nada saldrá mal.",
+  s:[{t:"Borrar cuenta",f:["Diálogo: «¿Continuar?»","«Aceptar» viene seleccionado","Borra todo sin poder deshacer"]},{t:"Editar tarea",f:["Botón Deshacer durante 10 s","Cambios visibles al instante","Etiquetas sugeridas"]},{t:"Compartir lista",f:["Vista previa de quién la verá","Botón Cancelar claro","Confirmación con el nombre de la lista"]}],
+  r:["Una acción destructiva sin deshacer y con «Aceptar» por omisión: quien acepta sin leer pierde todo.","El texto del diálogo es demasiado largo.","Pide confirmación dos veces."],
+  why:"Quien confía en que todo saldrá bien hace clic en lo que esté resaltado. Lo destructivo debe ser explícito, no estar preseleccionado y poder deshacerse."},
+ {id:"dormilon",kind:"enanos",n:"Dormilón",d:"Cansado y distraído: se equivoca al escribir y pierde el hilo.",
+  s:[{t:"Nuevo recordatorio",f:["Cinco campos obligatorios","Si uno es inválido, borra todo el formulario","Mensaje: «Datos incorrectos»"]},{t:"Hoy",f:["Solo las tareas de hoy","Texto grande","Un toque para completar"]},{t:"Borrar tarea",f:["Pide confirmación","Se recupera desde la papelera","Muestra el título a borrar"]}],
+  r:["Un error pequeño borra todo lo escrito y el mensaje no dice qué corregir.","No permite elegir el color del recordatorio.","La pantalla tiene un título muy largo."],
+  why:"El cansancio produce errores. Conservar lo escrito y señalar el campo exacto evita que la persona tenga que empezar de cero."},
+ {id:"timido",kind:"enanos",n:"Tímido",d:"Reservado: no quiere exponerse ni pedir ayuda.",
+  s:[{t:"Compartir logros",f:["Publica tu racha en tu perfil público","Activado por omisión","La ayuda es solo por videollamada"]},{t:"Perfil",f:["Foto opcional","Nombre visible solo para tus contactos","Preguntas frecuentes por escrito"]},{t:"Lista privada",f:["Candado visible","Nadie más la ve","Opción de compartir con un enlace"]}],
+  r:["Expone datos en público sin pedir permiso y la única ayuda obliga a dar la cara.","La racha debería mostrarse en días y no en horas.","El perfil público tiene poca información."],
+  why:"Alguien reservado no va a pedir ayuda para cambiar un ajuste que lo expone. La privacidad debe ser la opción por omisión y la ayuda debe incluir vías anónimas."},
+ {id:"estornudo",kind:"enanos",n:"Estornudo",d:"Con alergia: entre estornudos toca la pantalla sin querer.",
+  s:[{t:"Tarea abierta",f:["«Borrar» y «Guardar» pegados","Borrar no pide confirmación","Botones de 30 px"]},{t:"Nueva tarea",f:["Borrador guardado cada segundo","El teclado no tapa el campo","Botón Guardar grande"]},{t:"Lista",f:["Deslizar para completar, con «Deshacer»","Separación amplia entre filas","Encabezado fijo"]}],
+  r:["Un toque accidental en el botón vecino borra la tarea sin vuelta atrás.","El título de la tarea debería ir en negritas.","Falta un botón para duplicar la tarea."],
+  why:"Los toques involuntarios son frecuentes: estornudos, temblores, ir en transporte. Separar acciones opuestas y permitir deshacer protege a todas las personas."},
+ {id:"tontin",kind:"enanos",n:"Tontín",d:"Primera vez con una app así: no conoce gestos ni íconos.",
+  s:[{t:"Inicio",f:["Pantalla vacía","Íconos sin texto","Para crear una tarea: deslizar con tres dedos"]},{t:"Bienvenida",f:["Tres pasos con ejemplos","Botón «Crear mi primera tarea»","Se puede saltar"]},{t:"Ajustes",f:["Cada opción explicada en una frase","Búsqueda de ajustes","Restablecer valores"]}],
+  r:["Nada indica cómo empezar: depende de un gesto oculto y de íconos sin etiqueta.","La pantalla de inicio debería tener más color.","Tres dedos es un gesto incómodo en tabletas."],
+  why:"Quien nunca usó una app así no adivina gestos ni significados de íconos. Las pantallas vacías deben invitar a la primera acción con texto claro."},
+ {id:"doc",kind:"enanos",n:"Doc",d:"Experto: quiere atajos y hacer muchas cosas rápido.",
+  s:[{t:"Crear tareas",f:["Asistente de 4 pasos por cada tarea","Sin atajos de teclado","Sin importar ni crear en lote"]},{t:"Búsqueda",f:["Filtros combinables","Atajo «/» para buscar","Resultados mientras escribes"]},{t:"Lista",f:["Selección múltiple","Mover varias tareas a la vez","Menú contextual"]}],
+  r:["Obliga a quien domina la app a repetir un asistente lento; faltan atajos y acciones en lote.","El asistente usa textos poco amables.","No explica qué es una tarea."],
+  why:"Las personas expertas necesitan eficiencia: atajos, lotes e importación. Un flujo pensado solo para principiantes las frena."},
+ {id:"lector",kind:"di",n:"Persona con lector de pantalla",d:"Es ciega y usa un lector de pantalla para todo.",
+  s:[{t:"Barra de acciones",f:["Cuatro botones con íconos","Sin texto ni etiqueta accesible","El lector dice «botón, botón, botón, botón»"]},{t:"Formulario",f:["Cada campo con su etiqueta","Errores anunciados","Orden lógico de lectura"]},{t:"Lista",f:["Encabezados por día","Casillas con el nombre de la tarea","Contador anunciado"]}],
+  r:["Los botones no tienen nombre accesible: sin verlos es imposible saber qué hace cada uno.","Los íconos son demasiado pequeños.","Hay demasiados botones juntos."],
+  why:"Un lector de pantalla solo puede anunciar lo que el código describe. Cada control necesita un nombre accesible: texto visible o aria-label."},
+ {id:"conexion",kind:"di",n:"Persona con conexión 3G",d:"Vive en una zona rural, con señal lenta y datos caros.",
+  s:[{t:"Bienvenida",f:["Video de fondo de 25 MB","Se reproduce solo","No muestra nada hasta que termina de cargar"]},{t:"Lista",f:["Funciona sin conexión","Sincroniza al volver la red","Indicador de «sin red»"]},{t:"Ajustes",f:["Opción «ahorrar datos»","Imágenes en baja resolución","Descargas solo con wifi"]}],
+  r:["Gasta datos caros y deja la pantalla en blanco mientras carga.","Un video no explica bien la app.","El video debería tener música."],
+  why:"Con conexiones lentas y datos caros, lo pesado y automático excluye. La carga progresiva y el contenido opcional hacen la app usable para más personas."},
+ {id:"daltonismo",kind:"di",n:"Persona con daltonismo",d:"No distingue bien el rojo del verde.",
+  s:[{t:"Prioridades",f:["Punto rojo = urgente","Punto verde = puede esperar","Sin texto ni forma distinta"]},{t:"Calendario",f:["Días con número y nombre","Hoy marcado con un borde y la palabra «Hoy»","Eventos con ícono"]},{t:"Estadísticas",f:["Barras con etiquetas de valor","Patrones además de colores","Leyenda escrita"]}],
+  r:["La prioridad depende solo del color: rojo y verde se ven casi iguales para esta persona.","Los puntos son muy pequeños.","Faltan más niveles de prioridad."],
+  why:"El color nunca debe ser el único canal de información. Agrega texto, íconos o formas distintas."},
+ {id:"mayor",kind:"di",n:"Adulto mayor",d:"Tiene la vista cansada y menos precisión en los dedos.",
+  s:[{t:"Detalle de tarea",f:["Texto de 10 px","Botones diminutos","Ignora el tamaño de letra del sistema"]},{t:"Hoy",f:["Texto que crece con el sistema","Botones grandes","Alto contraste"]},{t:"Ayuda",f:["Preguntas frecuentes en lenguaje claro","Teléfono de soporte","Video con subtítulos"]}],
+  r:["El texto y los botones son demasiado pequeños y no se pueden agrandar.","Tiene demasiada información.","No usa el color favorito de la persona."],
+  why:"Con la edad cambian la vista y la precisión. Respetar el tamaño de letra del sistema y usar botones amplios beneficia a todas las personas."}
+];
+const PZ_ROUNDS=8;
+
+/* ---------- triaje (nivel 7) ---------- */
+const AREAS=[
+ {n:"Pagos",c:"Se corrigió ayer un cobro duplicado con tarjetas de débito.",tags:["Repaired","Core","Risky"],w:3,why:"Lo reparado ayer y que toca dinero: un clásico de regresión. Si falla, hay cobros dobles y quejas."},
+ {n:"Inicio de sesión",c:"Sin cambios en este release.",tags:["Core"],w:1,why:"Es esencial, pero no cambió. Una revisión rápida basta si hay áreas más riesgosas."},
+ {n:"Exportar a CSV",c:"Función nueva.",tags:["Recent"],w:2,why:"Todo lo nuevo merece atención, aunque su impacto es menor que el de pagos o datos."},
+ {n:"Zona horaria de recordatorios",c:"Ahora se toma de la configuración regional del dispositivo.",tags:["Recent","Configuration sensitive"],w:3,why:"Cambio reciente que depende del entorno: cada región y cada dispositivo pueden comportarse distinto."},
+ {n:"Notificaciones push",c:"Se actualizó la librería; fallaron en los últimos cuatro releases.",tags:["Chronic","Recent"],w:3,why:"Crónica y además recién tocada: la historia dice que volverá a fallar."},
+ {n:"Tema oscuro",c:"Se ajustó el color de dos íconos.",tags:["Recent"],w:0,why:"Cambio cosmético de bajo riesgo. Mejor un vistazo al final que una ficha entera."},
+ {n:"Sincronización entre dispositivos",c:"Sin cambios; es lo más usado después de crear tareas.",tags:["Core","Risky"],w:2,why:"Esencial y con riesgo de pérdida de datos, aunque no cambió. Buena candidata si te sobra una ficha."},
+ {n:"Página «Acerca de»",c:"Se actualizó el año del copyright.",tags:[],w:0,why:"Sin riesgo real. No hace falta probarla en este release."},
+ {n:"Migración de base de datos",c:"Se agregó la columna «etiquetas» a dos millones de tareas.",tags:["Recent","Risky","Core"],w:3,why:"Toca los datos de todas las personas y es difícil de revertir. Prioridad máxima."},
+ {n:"Idioma portugués",c:"Se agregaron traducciones nuevas (pt-BR).",tags:["Recent","Configuration sensitive"],w:1,why:"Nuevo y depende del idioma configurado, pero por ahora afecta a pocas personas."}
+];
+const TRI_TOKENS=5,TRI_GOALS=[.4,.7,.9];
+const TRI_MAX=AREAS.map(a=>a.w).sort((a,b)=>b-a).slice(0,TRI_TOKENS).reduce((s,x)=>s+x,0);
+const RC={"Recent":"reciente","Core":"esencial","Risky":"riesgoso","Configuration sensitive":"sensible a la configuración","Repaired":"reparado","Chronic":"crónico"};
+const TORCH_Q=[
+ ["tri-t","Timer · tiempo",["30 minutos","60 minutos","90 minutos"]],
+ ["tri-o","Oracles · oráculos",["Notas de versión y la versión anterior","Reglas de negocio de pagos","Quejas recientes de soporte"]],
+ ["tri-r","Risks · riesgos",["Cobros duplicados","Pérdida de datos en la migración","Horas incorrectas en recordatorios"]],
+ ["tri-c","Consider these questions · preguntas",["¿Qué cambió y qué podría romperse por eso?","¿A quién afecta si falla?","¿Cómo sabré que algo está mal?"]],
+ ["tri-h","Heuristics · heurísticas",["RCRCRC","Seguir los datos","Ricitos de Oro"]]
+];
+
+/* ---------- cartas que se ganan fuera de los bugs ---------- */
+const EXTRA=[
+ {card:"spec-watchlist",ok:()=>S.spec.best>=4},
+ {card:"lyndsay",ok:()=>S.spec.best>=SPEC_FLAGS},
+ {card:"tuttu",ok:()=>missionDone("api")},
+ {card:"rcrcrc",ok:()=>S.triage.reviewed},
+ {card:"mapas",ok:()=>S.triage.reviewed},
+ {card:"torch",ok:()=>S.triage.charter},
+ {card:"enanos",ok:()=>PERSONAS.some(p=>p.kind==="enanos"&&S.personas.done[p.id])},
+ {card:"diversidad",ok:()=>PERSONAS.some(p=>p.kind==="di"&&S.personas.done[p.id])}
 ];
 
 /* ---------- estado ---------- */
-const KEY="caceria-heuristica-v1";
-const blank=()=>({xp:0,found:{},cards:{},hints:{registro:0,recordatorios:0,api:0},forge:{},spec:{best:0,perfect:false},badges:{},firstTry:0});
-function load(){try{const r=localStorage.getItem(KEY);if(r){const o=JSON.parse(r);const b=blank();return Object.assign(b,o,{hints:Object.assign(b.hints,o.hints||{}),spec:Object.assign(b.spec,o.spec||{})});}}catch(e){}return blank();}
+const KEY="caceria-heuristica-v1";const VERSION=2;
+const BUG_MISSIONS=["registro","recordatorios","api","sesiones","a11y","release"];
+function blank(){const hints={};BUG_MISSIONS.forEach(m=>{hints[m]=0;});
+ return {version:VERSION,xp:0,found:{},cards:{},hints,forge:{},spec:{best:0,perfect:false},badges:{},firstTry:0,
+  triage:{best:0,reviewed:false,charter:false},personas:{done:{}},release:{report:null,onTime:false}};}
+// Rellena los campos nuevos sin perder lo existente. Un estado v1 conserva XP, cartas e insignias.
+function migrate(o){const b=blank();if(!o||typeof o!=="object")return b;
+ const s=Object.assign(b,o);
+ ["found","cards","forge","badges"].forEach(k=>{if(!s[k]||typeof s[k]!=="object")s[k]={};});
+ s.hints=Object.assign(blank().hints,o.hints||{});
+ s.spec=Object.assign(blank().spec,o.spec||{});
+ s.triage=Object.assign(blank().triage,o.triage||{});
+ s.personas={done:Object.assign({},(o.personas&&o.personas.done)||{})};
+ s.release=Object.assign(blank().release,o.release||{});
+ // v2: encontrar un bug desbloquea todas sus cartas válidas, también para bugs hallados en v1
+ Object.keys(s.found).forEach(k=>{if(!BUGS[k]){delete s.found[k];return;}BUGS[k].ok.forEach(l=>{s.cards[LABEL[l]]=true;});});
+ s.version=VERSION;return s;}
+function load(){try{const r=localStorage.getItem(KEY);if(r)return migrate(JSON.parse(r));}catch(e){}return blank();}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(S));}catch(e){}}
 let S=load();
 
-const TOTAL_BUGS=Object.keys(BUGS).length;
-const TOTAL_UNITS=TOTAL_BUGS+SPEC_FLAGS+MNEMO.length;
 const nFound=()=>Object.keys(S.found).length;
 const nForge=()=>Object.keys(S.forge).length;
-const progress=()=>Math.min(1,(nFound()+S.spec.best+nForge())/TOTAL_UNITS);
+const nPersonas=()=>Object.keys(S.personas.done).length;
 const bugIds=m=>Object.keys(BUGS).filter(k=>BUGS[k].m===m);
 const missionDone=m=>bugIds(m).every(k=>S.found[k]);
-function levelProg(id){
- if(id==="detective")return [S.spec.best,SPEC_FLAGS];
- if(id==="forja")return [nForge(),MNEMO.length];
- const ids=bugIds(id);return [ids.filter(k=>S.found[k]).length,ids.length];
-}
-const RANKS=[[0,"Aprendiz"],[150,"Rastreador"],[350,"Cazabugs"],[550,"Estratega"],[780,"Leyenda heurística"]];
+const bugUnits=m=>{const ids=bugIds(m);return [ids.filter(k=>S.found[k]).length,ids.length];};
+const triUnits=()=>TRI_GOALS.filter(g=>S.triage.best>=g).length;
+// Total dinámico: suma las unidades de cada nivel del registro LEVELS.
+function progress(){let a=0,b=0;LEVELS.forEach(l=>{const [x,y]=l.units();a+=Math.min(x,y);b+=y;});return b?Math.min(1,a/b):0;}
+const RANKS=[[0,"Aprendiz"],[150,"Rastreador"],[350,"Cazabugs"],[550,"Estratega"],[780,"Leyenda heurística"],[1150,"Mente exploratoria"],[1500,"Oráculo del testing"]];
 function rank(){let i=0;RANKS.forEach((r,j)=>{if(S.xp>=r[0])i=j;});const cur=RANKS[i],nx=RANKS[i+1];return {name:cur[1],frac:nx?(S.xp-cur[0])/(nx[0]-cur[0]):1,next:nx?nx[0]:null};}
 const bar=(f,cls)=>`<div class="bar ${cls||""}" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${Math.round(f*100)}"><i style="width:${Math.max(0,Math.min(100,f*100))}%"></i></div>`;
 
@@ -434,21 +687,26 @@ const BADGES=[
  {id:"reloj",n:"Viajero del tiempo",d:"Encuentra los 6 bugs de fechas y horas.",ok:()=>missionDone("recordatorios")},
  {id:"rompe-apis",n:"Rompe-APIs",d:"Encuentra los 7 bugs de la API.",ok:()=>missionDone("api")},
  {id:"ojo",n:"Ojo de editor",d:"Marca las 8 frases problemáticas sin falsos positivos.",ok:()=>S.spec.perfect},
- {id:"memoria",n:"Memoria de elefante",d:"Forja las 9 mnemotecnias.",ok:()=>nForge()>=MNEMO.length},
- {id:"sin-pistas",n:"Sin pistas",d:"Completa una misión de bugs sin pedir pistas.",ok:()=>["registro","recordatorios","api"].some(m=>missionDone(m)&&S.hints[m]===0)},
+ {id:"memoria",n:"Memoria de elefante",d:`Forja las ${MNEMO.length} mnemotecnias.`,ok:()=>nForge()>=MNEMO.length},
+ {id:"sin-pistas",n:"Sin pistas",d:"Completa una misión de bugs sin pedir pistas.",ok:()=>BUG_MISSIONS.some(m=>missionDone(m)&&S.hints[m]===0)},
  {id:"certero",n:"Clasificador certero",d:"Clasifica 10 bugs al primer intento.",ok:()=>S.firstTry>=10},
+ {id:"doble-agente",n:"Doble agente",d:"Encuentra los 6 bugs de Dos sesiones.",ok:()=>missionDone("sesiones")},
+ {id:"estratega",n:"Estratega del release",d:"Logra 90 % o más en el triaje.",ok:()=>S.triage.best>=.9},
+ {id:"mil-caras",n:"Mil caras",d:"Completa las 8 rondas de la ruleta de personas.",ok:()=>nPersonas()>=PZ_ROUNDS},
+ {id:"para-todas",n:"Para todas las personas",d:"Encuentra los 6 bugs de accesibilidad.",ok:()=>missionDone("a11y")},
+ {id:"jefe",n:"Jefe vencido",d:"Encuentra los 8 bugs del día de release.",ok:()=>missionDone("release")},
+ {id:"a-tiempo",n:"Release a tiempo",d:"Encuentra los 8 bugs del release en 10 minutos o menos.",ok:()=>!!S.release.onTime},
+ {id:"reporte",n:"Buen reporte",d:"Guarda un reporte de bug completo.",ok:()=>!!S.release.report},
+ {id:"codice",n:"Códice completo",d:"Desbloquea todas las cartas del Códice.",ok:()=>CARD_ORDER.every(id=>S.cards[id])},
  {id:"leyenda",n:"Leyenda heurística",d:"Llega al 100 % de progreso.",ok:()=>progress()>=1}
 ];
-function checkBadges(){BADGES.forEach(b=>{if(!S.badges[b.id]&&b.ok()){S.badges[b.id]=true;toast("Insignia: "+b.n);}});save();}
-function unlock(id){if(id&&!S.cards[id]){S.cards[id]=true;toast("Nueva carta: "+CARDS[id].n);}}
+function checkUnlocks(){EXTRA.forEach(x=>{if(x.ok())unlock(x.card);});}
+function checkBadges(){checkUnlocks();BADGES.forEach(b=>{if(!S.badges[b.id]&&b.ok()){S.badges[b.id]=true;toast("Insignia: "+b.n);}});save();}
+function unlock(id){if(id&&CARDS[id]&&!S.cards[id]){S.cards[id]=true;toast("Nueva carta: "+CARDS[id].n);}}
 function toast(msg){const t=document.createElement("div");t.className="toast";t.textContent=msg;$("#toasts").appendChild(t);setTimeout(()=>t.remove(),3200);}
+function live(msg){const l=$("#live");if(l)l.textContent=msg;}
 
-/* ---------- router ---------- */
-const ROUTES=["inicio","registro","recordatorios","api","detective","forja","codice","logros"];
-const NAV=[["inicio","Mapa"],["registro","1 Registro"],["recordatorios","2 Fechas"],["api","3 API"],["detective","4 Specs"],["forja","5 Forja"],["codice","Códice"],["logros","Logros"]];
-let cur=ROUTES.includes(location.hash.slice(1))?location.hash.slice(1):"inicio";
-function go(r){if(!ROUTES.includes(r))r="inicio";cur=r;try{history.replaceState(null,"","#"+r);}catch(e){}render();window.scrollTo(0,0);}
-
+/* ---------- render ---------- */
 function renderHUD(){
  const rk=rank();
  $("#hud").innerHTML=`<div class="wrap">
@@ -459,16 +717,32 @@ function renderHUD(){
   <nav class="nav" aria-label="Secciones">${NAV.map(([r,l])=>`<button data-go="${r}" ${r===cur?'aria-current="page"':""}>${l}</button>`).join("")}</nav>
  </div>`;
  const svg=$("#hud .brand svg");if(svg){svg.style.width="22px";svg.style.height="22px";svg.style.color="var(--pink)";}
+ const nav=$("#hud .nav"),on=$("#hud .nav [aria-current]");if(nav&&on&&nav.scrollWidth>nav.clientWidth)nav.scrollLeft=on.offsetLeft-nav.clientWidth/2+on.offsetWidth/2;
 }
-function render(){renderHUD();const v=$("#view");v.innerHTML=`<div class="view">${VIEWS[cur]()}</div>`;AFTER[cur]&&AFTER[cur]();}
+function render(){
+ const a=document.activeElement;const fid=a&&a.id&&$("#view").contains(a)?a.id:null;
+ renderHUD();const L=levelById(cur);const locked=L&&L.unlock&&!L.unlock();
+ $("#view").innerHTML=`<div class="view">${locked?lockedView(L):(L?L.view():VIEWS[cur]())}</div>`;
+ restoreForms();
+ if(!locked){const af=L?L.after:AFTER[cur];if(af)af();}
+ if(fid){const e=document.getElementById(fid);if(e)e.focus({preventScroll:true});}
+}
 function refreshSide(){const s=$("#side");if(s)s.innerHTML=sideHTML(cur);renderHUD();}
+// Los formularios recuerdan lo escrito al cambiar de vista: cada simulador guarda sus valores en .form (no en localStorage).
+function restoreForms(){Object.values(SIMS).forEach(s=>{for(const id in s.form){const e=document.getElementById(id);if(!e)continue;if(e.type==="checkbox")e.checked=!!s.form[id];else e.value=s.form[id];}});}
+function remember(e){const t=e.target;if(!t.id||!t.matches||!t.matches("input,select,textarea")||t.dataset.nopersist!==undefined)return;const s=SIMS[t.id.split("-")[0]];if(s)s.form[t.id]=t.type==="checkbox"?t.checked:t.value;}
+function setField(id,v){const e=document.getElementById(id);if(e)e.value=v;const s=SIMS[id.split("-")[0]];if(s)s.form[id]=v;}
+function lockedView(L){return `<div class="m-head"><div><p class="lbl">${esc(L.nav)} · bloqueado</p><h2>${esc(L.n)}</h2><p>${esc(L.lock)}</p></div></div>
+ <div class="px side-box"><p class="lbl">Requisitos</p><ul class="found">${L.req.map(id=>{const l=levelById(id),[a,b]=l.units();return `<li><b>${esc(l.n)}</b><span>${a}/${b}${a>=b?" ✓":""}</span></li>`;}).join("")}</ul>
+ <div class="row" style="margin-top:14px">${L.req.filter(id=>{const [a,b]=levelById(id).units();return a<b;}).map(id=>`<button class="btn" data-go="${id}">Ir a ${esc(levelById(id).n)}</button>`).join("")}</div></div>`;}
 
 /* ---------- vistas ---------- */
 let wisdomI=Math.floor(Math.random()*WISDOM.length);
 const VIEWS={};const AFTER={};
+const isLocked=l=>!!(l.unlock&&!l.unlock());
 
 VIEWS.inicio=()=>{
- const nextL=LEVELS.find(l=>{const [a,b]=levelProg(l.id);return a<b;});
+ const nextL=LEVELS.find(l=>{const [a,b]=l.units();return a<b&&!isLocked(l);});
  const pr=progress();
  return `<section class="hero">
   <div><p class="lbl">Juego de heurísticas de prueba</p>
@@ -485,17 +759,17 @@ VIEWS.inicio=()=>{
    <div><span>${nFound()}/${TOTAL_BUGS}</span><small>bugs encontrados</small></div>
    <div><span>${S.spec.best}/${SPEC_FLAGS}</span><small>frases en la spec</small></div>
    <div><span>${nForge()}/${MNEMO.length}</span><small>mnemotecnias</small></div>
-   <div><span>${Object.keys(S.cards).length}/${CARD_ORDER.length}</span><small>cartas</small></div>
+   <div><span>${Object.keys(S.cards).filter(id=>CARDS[id]).length}/${CARD_ORDER.length}</span><small>cartas</small></div>
   </div>
-  ${pr>=1?`<p class="win">Completaste la cacería. Ya piensas en variables, límites y riesgos antes de tocar el teclado.</p>`:""}
+  ${pr>=1?`<p class="win">Completaste la cacería. Ya piensas en variables, límites, personas y riesgos antes de tocar el teclado.</p>`:""}
  </section>
- <section class="levels" aria-label="Niveles">${LEVELS.map((l,i)=>{const [a,b]=levelProg(l.id);return `<article class="tile px ${a>=b?"done":""}">
-   <span class="lvl">Nivel ${i+1}${a>=b?" · completo":""}</span><h3>${esc(l.n)}</h3><p>${esc(l.d)}</p>${bar(a/b)}
-   <div class="row"><span class="mini">${a}/${b}</span><button class="btn ${a>=b?"ghost":""}" data-go="${l.id}">${a===0?"Jugar":a>=b?"Repasar":"Seguir"}</button></div></article>`;}).join("")}</section>
+ <section class="levels" aria-label="Niveles">${LEVELS.map((l,i)=>{const [a,b]=l.units();const lk=isLocked(l);return `<article class="tile px ${a>=b?"done":""} ${lk?"locked":""}">
+   <span class="lvl">Nivel ${i+1}${a>=b?" · completo":lk?" · bloqueado":""}</span><h3>${esc(l.n)}</h3><p>${esc(lk?l.lock:l.d)}</p>${bar(a/b)}
+   <div class="row"><span class="mini">${a}/${b}</span><button class="btn ${a>=b||lk?"ghost":""}" data-go="${l.id}">${lk?"Ver requisitos":a===0?"Jugar":a>=b?"Repasar":"Seguir"}</button></div></article>`;}).join("")}</section>
  <section class="how" aria-label="Cómo se juega">
   <div class="px"><b>1</b><p>Explora la app simulada. Escribe valores raros, repite acciones, cambia el orden. No hay instrucciones: tú decides qué probar.</p></div>
   <div class="px"><b>2</b><p>Cuando algo se comporte mal, la bitácora lo detecta. Elige qué heurística te llevó ahí: 30 XP al primer intento, 10 si te equivocas.</p></div>
-  <div class="px"><b>3</b><p>Cada bug desbloquea una carta del Códice con la heurística, un ejemplo y con qué combinarla.</p></div>
+  <div class="px"><b>3</b><p>Cada bug desbloquea cartas del Códice con la heurística, un ejemplo y con qué combinarla.</p></div>
  </section>
  <section class="wisdom px"><p class="lbl">Sabiduría del tester</p><blockquote>«${esc(WISDOM[wisdomI])}»</blockquote><div><button class="btn ghost" data-wisdom>Otra frase</button></div></section>`;
 };
@@ -504,17 +778,18 @@ function sideHTML(m){
  const ids=bugIds(m);const n=ids.filter(k=>S.found[k]).length;
  const shown=HINTS[m].slice(0,S.hints[m]);
  return `<div class="px side-box"><p class="lbl">Bitácora de bugs</p><p class="big">${n}/${ids.length}</p>${bar(n/ids.length)}
-  <ul class="found">${ids.map(k=>{const f=S.found[k];return f?`<li><b>${esc(BUGS[k].t)}</b><span>${esc(CARDS[f.card]?CARDS[f.card].n:"")}${f.ok?"":" (con ayuda)"}</span></li>`:`<li class="unk">?? bug sin descubrir</li>`;}).join("")}</ul>
+  <ul class="found" aria-live="polite">${ids.map(k=>{const f=S.found[k];return f?`<li><b>${esc(BUGS[k].t)}</b><span>${esc(CARDS[f.card]?CARDS[f.card].n:"")}${f.ok?"":" (con ayuda)"}</span></li>`:`<li class="unk">?? bug sin descubrir</li>`;}).join("")}</ul>
   ${n===ids.length?`<p class="muted" style="margin:12px 0 0">Misión completa.</p>`:""}</div>
+  ${m==="release"?repSide():""}
   <div class="px side-box"><p class="lbl">Pistas</p>${shown.map(h=>`<p class="hint">${esc(h)}</p>`).join("")}
   ${S.hints[m]<HINTS[m].length?`<button class="btn ghost" data-hint="${m}">Pedir pista ${S.hints[m]+1} de ${HINTS[m].length}</button>`:`<p class="muted" style="margin:0">Ya no quedan pistas.</p>`}</div>`;
 }
 const head=(i,t,d)=>`<div class="m-head"><div><p class="lbl">Nivel ${i}</p><h2>${t}</h2><p>${d}</p></div></div>`;
-const phone=(inner,id)=>`<div class="phone px"><div class="phone-bar"><span>TaskPal</span><span>9:41</span></div><div class="screen" id="${id}">${inner}</div></div>`;
+const phone=(inner,id,label)=>`<div class="phone px"><div class="phone-bar"><span>${label||"TaskPal"}</span><span>9:41</span></div><div class="screen" id="${id}">${inner}</div></div>`;
 
 /* ----- Nivel 1: registro ----- */
 function seedAccounts(){return [{nombre:"Ana López",correo:"ana@correo.mx",edad:29},{nombre:"Beto Salas",correo:"beto@correo.mx",edad:34}];}
-const reg={accounts:seedAccounts(),last:0,lastEmail:"",msg:null};
+const reg={accounts:seedAccounts(),last:0,lastEmail:"",form:{}};
 VIEWS.registro=()=>`${head(1,"Registro de cuenta","Crea cuentas en TaskPal. El formulario ya viene lleno con datos válidos: cámbialos para encontrar 9 bugs.")}
  <div class="mission"><div class="stage">
   ${phone(`<h3 class="app-h">Crea tu cuenta</h3>
@@ -542,11 +817,13 @@ AFTER.registro=()=>{
   const nombre=$("#reg-nombre").value,correo=$("#reg-correo").value.trim(),edadS=$("#reg-edad").value.trim(),pass=$("#reg-pass").value;
   const now=Date.now();const quick=now-reg.last<1500;
   if(nombre.length===0)return regMsg("err","El nombre es obligatorio.");
+  // Provocar: nombre «Ana 🚀».
   if(EMOJI.test(nombre)){$("#reg-msg").innerHTML="";$("#reg-crash").hidden=false;triggerBug("r-emoji",`nombre = "${nombre}"\nFATAL: RangeError en medirAncho()\nla app se cerró`);return;}
   if(!correo.includes("."))return regMsg("err","Correo inválido.");
   if(!/^-?\d+$/.test(edadS))return regMsg("err","Escribe la edad con números.");
   const edad=parseInt(edadS,10);
   if(edad>120)return regMsg("err","Edad inválida.");
+  // Provocar: edad 13.
   if(edad>=0&&edad<=13){regMsg("err","Debes tener al menos 13 años.");if(edad===13)triggerBug("r-edad-13",`edad = 13\nrespuesta: "Debes tener al menos 13 años."`);return;}
   if(pass.length<8)return regMsg("err","La contraseña necesita al menos 8 caracteres.");
   const dup=reg.accounts.some(a=>a.correo.toLowerCase()===correo.toLowerCase());
@@ -554,11 +831,16 @@ AFTER.registro=()=>{
   reg.accounts.push({nombre:shown,correo,edad});
   regMsg("ok",`Cuenta creada. ¡Bienvenido, ${shown}!`);
   regAdmin();
+  // Provocar: nombre de puros espacios «   ».
   if(nombre.trim()==="")triggerBug("r-espacios",`nombre = "${nombre}"  (${nombre.length} espacios)\nsaludo: "¡Bienvenido, ${nombre}!"`);
+  // Provocar: nombre de más de 64 caracteres. / nombre con acentos, p. ej. «José Núñez».
   if(nombre.length>64)triggerBug("r-largo",`longitud del nombre = ${nombre.length}\nguardado como: "undefined"`);
   else if(ACCENT.test(nombre))triggerBug("r-acentos",`escribiste: "${nombre}"\nse guardó:  "${shown}"`);
+  // Provocar: correo «juan.perez.com».
   if(!correo.includes("@"))triggerBug("r-correo",`correo = "${correo}"\nrespuesta: cuenta creada`);
+  // Provocar: edad -5.
   if(edad<0)triggerBug("r-edad-neg",`edad = ${edad}\nrespuesta: cuenta creada`);
+  // Provocar: doble clic en «Crear cuenta» (r-flood) o registrar dos veces el mismo correo (r-unico).
   if(dup){if(quick&&correo.toLowerCase()===reg.lastEmail)triggerBug("r-flood",`2 envíos en ${now-reg.last} ms\ncuentas con ${correo}: ${reg.accounts.filter(a=>a.correo.toLowerCase()===correo.toLowerCase()).length}`);else triggerBug("r-unico",`correo = ${correo}\ncuentas con ese correo: ${reg.accounts.filter(a=>a.correo.toLowerCase()===correo.toLowerCase()).length}`);}
   reg.last=now;reg.lastEmail=correo.toLowerCase();
  });
@@ -570,7 +852,7 @@ const MAXDIA=[31,29,31,30,31,30,31,31,31,31,30,31]; // ← contiene bugs a prop�
 const ZONAS={cdmx:"Ciudad de México (UTC−6)",tij:"Tijuana (UTC−8, con horario de verano)",ny:"Nueva York (UTC−5, con horario de verano)",mad:"Madrid (UTC+1, con horario de verano)"};
 const leap=y=>(y%4===0&&y%100!==0)||y%400===0;
 function seedReminders(){return [{titulo:"Junta de equipo",fecha:"3 de noviembre de 2026",hora:"10:00",zona:"cdmx",dev:"10:00"}];}
-const rec={list:seedReminders()};
+const rec={list:seedReminders(),form:{}};
 VIEWS.recordatorios=()=>`${head(2,"Recordatorios","Programa recordatorios. Tu dispositivo está en la Ciudad de México. Hay 6 bugs escondidos en fechas, horas y zonas horarias.")}
  <div class="mission"><div class="stage">
   ${phone(`<h3 class="app-h">Nuevo recordatorio</h3>
@@ -616,20 +898,25 @@ AFTER.recordatorios=()=>{
   const hora=`${p2(hh)}:${p2(mm)}`;
   rec.list.push({titulo,fecha:fechaStr,hora,zona,dev:hora});
   recList();recMsg("ok",`Listo: «${titulo}» programado.`);
+  // Provocar: fecha 2026-11-15.
   if(iso)triggerBug("f-iso",`escribiste: ${fs}\nla app entendió: ${fechaStr}`);
+  // Provocar: fecha 31/09/2026.
   if(!iso&&mo===9&&d===31)triggerBug("f-31sep",`fecha aceptada: ${fechaStr}`);
+  // Provocar: fecha 29/02/2027.
   if(!iso&&mo===2&&d===29&&!leap(y))triggerBug("f-bisiesto",`fecha aceptada: ${fechaStr}\n${y} no es bisiesto`);
+  // Provocar: hora 12:30 am o 12:30 pm.
   if(mer&&+h[1]===12)triggerBug("f-ampm",`escribiste: ${hs}\nla app guardó: ${hora}\ncorrecto: ${p2(real)}:${p2(mm)}`);
+  // Provocar: cualquier zona distinta de Ciudad de México.
   if(zona!=="cdmx")triggerBug("f-zona",`evento: ${hora} en ${ZONAS[zona].split(" (")[0]}\ndispositivo (CDMX): ${hora}\n¿no debería ser distinta?`);
+  // Provocar: 08/03/2026 a las 02:30 en Nueva York.
   const dst=!iso&&real===2&&((zona==="ny"||zona==="tij")&&((y===2026&&mo===3&&d===8)||(y===2027&&mo===3&&d===14))||zona==="mad"&&((y===2026&&mo===3&&d===29)||(y===2027&&mo===3&&d===28)));
   if(dst)triggerBug("f-dst",`${fechaStr}, ${p2(real)}:${p2(mm)} en ${ZONAS[zona].split(" (")[0]}\nese día el reloj salta de 01:59 a 03:00`);
  });
 };
 
 /* ----- Nivel 3: API ----- */
-const api={tasks:null,next:10,res:null};
 function seedTasks(){return [[1,"Comprar café","ana",2],[2,"Revisar PR #42","ana",4],[3,"Pagar luz","ana",3],[4,"Llamar al dentista","ana",1],[5,"Preparar demo","ana",5],[6,"Renovar pasaporte","beto",4],[7,"Plan de pruebas v2","beto",5],[8,"Cita médica","beto",2],[9,"Regalo para mamá","beto",3]].map(([id,titulo,owner,prioridad])=>({id,titulo,owner,prioridad,completada:false}));}
-api.tasks=seedTasks();
+const api={tasks:seedTasks(),next:10,res:null,form:{}};
 const pub=t=>({id:t.id,titulo:t.titulo,prioridad:t.prioridad,completada:t.completada});
 const STATUS={200:"OK",201:"Created",204:"No Content",400:"Bad Request",401:"Unauthorized",403:"Forbidden",404:"Not Found",405:"Method Not Allowed",500:"Internal Server Error"};
 const R=(s,b)=>({s,b});
@@ -640,14 +927,17 @@ function handleApi(method,path,tok,bodyText){
  const mId=p.match(/^\/tareas\/(\d+)$/);const isCol=p==="/tareas";
  if(!isCol&&!mId)return R(404,{error:"Ruta no encontrada"});
  const id=mId?+mId[1]:null;const t=mId?api.tasks.find(x=>x.id===id):null;
+ // Provocar: PATCH /tareas/2.
  if(method==="PATCH"){if(mId){triggerBug("a-patch",`PATCH ${p}\n→ 500 en lugar de 405`);return R(500,{error:"Internal Server Error",trace:"TypeError: handlers.patch is not a function\n    at router.js:88:17\n    at Layer.handle (express/lib/router/layer.js:95:5)"});}return R(405,{error:"Método no permitido"});}
  if(!user){
+  // Provocar: DELETE /tareas/1 con «Sin token».
   if(method==="DELETE"&&mId){if(!t)return R(404,{error:"La tarea no existe"});api.tasks=api.tasks.filter(x=>x.id!==id);triggerBug("a-del",`DELETE ${p}  (sin token)\n→ 204: la tarea "${t.titulo}" se borró`);return R(204,null);}
   return R(401,{error:"Se requiere un token"});
  }
  function body(){if(!bodyText.trim())return {err:R(400,{error:"Se requiere un cuerpo JSON"})};try{const b=JSON.parse(bodyText);if(!b||typeof b!=="object"||Array.isArray(b))return {err:R(400,{error:"El cuerpo debe ser un objeto JSON"})};return {b};}catch(e){return {err:R(400,{error:"JSON inválido"})};}}
  function validate(b){
   if(!("titulo" in b))return R(400,{error:"titulo es obligatorio"});
+  // Provocar: POST /tareas con {"titulo": null}.
   if(b.titulo===null){triggerBug("a-null",`POST/PUT con "titulo": null\n→ 500 con stack trace`);return R(500,{error:"Internal Server Error",trace:"TypeError: Cannot read properties of null (reading 'trim')\n    at validarTarea (/srv/taskpal/src/tareas.js:42:31)\n    at /srv/taskpal/src/rutas.js:17:9"});}
   if(typeof b.titulo!=="string")return R(400,{error:"titulo debe ser texto"});
   if("prioridad" in b&&!(Number.isInteger(b.prioridad)&&b.prioridad>=1&&b.prioridad<=5))return R(400,{error:"prioridad debe ser un entero de 1 a 5"});
@@ -657,7 +947,9 @@ function handleApi(method,path,tok,bodyText){
   if(method==="GET"){
    const ls=url.searchParams.get("limit");let limit=20;
    if(ls!==null){if(!/^-?\d+$/.test(ls))return R(400,{error:"limit debe ser un entero"});limit=parseInt(ls,10);
+    // Provocar: GET /tareas?limit=-1.
     if(limit<0){triggerBug("a-neg",`GET /tareas?limit=${limit}\n→ ${api.tasks.length} tareas de todas las personas + hashes`);return R(200,{total:api.tasks.length,tareas:api.tasks.map(x=>Object.assign(pub(x),{owner_email:x.owner+"@correo.mx",password_hash:"$2b$10$"+(x.owner==="ana"?"Qm9yZWQ/":"Tm90SGVy")+"x9Kz…"}))});}
+    // Provocar: GET /tareas?limit=1000.
     if(limit===0||limit>=1000){if(limit===1000)triggerBug("a-lim",`GET /tareas?limit=1000\n→ 400 (la documentación dice máximo 1000)`);return R(400,{error:"limit debe estar entre 1 y 1000"});}}
    const own=api.tasks.filter(x=>x.owner===user);return R(200,{total:own.length,tareas:own.slice(0,limit).map(pub)});
   }
@@ -665,12 +957,14 @@ function handleApi(method,path,tok,bodyText){
    const {b,err}=body();if(err)return err;const v=validate(b);if(v)return v;
    const vacio=b.titulo.trim()==="";
    const nt={id:api.next++,titulo:b.titulo,owner:user,prioridad:b.prioridad||3,completada:false};api.tasks.push(nt);
+   // Provocar: POST /tareas con {"titulo": ""}.
    if(vacio)triggerBug("a-vacio",`POST /tareas  {"titulo": ${JSON.stringify(b.titulo)}}\n→ 201 Created (id ${nt.id})`);
    return R(201,pub(nt));
   }
   return R(405,{error:"Método no permitido"});
  }
  if(!t)return R(404,{error:"La tarea no existe"});
+ // Provocar: GET /tareas/7 con el token de Ana.
  if(method==="GET"){if(t.owner!==user)triggerBug("a-idor",`GET ${p} con el token de ${user==="ana"?"Ana":"Beto"}\n→ 200: tarea de ${t.owner==="ana"?"Ana":"Beto"}`);return R(200,pub(t));}
  if(method==="PUT"){if(t.owner!==user)return R(403,{error:"No puedes modificar tareas ajenas"});const {b,err}=body();if(err)return err;const v=validate(b);if(v)return v;if(b.titulo.trim()==="")return R(400,{error:"titulo no puede estar vacío"});t.titulo=b.titulo;if(b.prioridad)t.prioridad=b.prioridad;return R(200,pub(t));}
  if(method==="DELETE"){if(t.owner!==user)return R(403,{error:"No puedes borrar tareas ajenas"});api.tasks=api.tasks.filter(x=>x.id!==id);return R(204,null);}
@@ -722,16 +1016,17 @@ VIEWS.detective=()=>{
  </div><aside class="side"><div class="px side-box"><p class="lbl">Qué buscar</p><p style="margin:0 0 8px">Ambigüedad, palabras evasivas (debería, podría), vaguedad sin dueño, jerga y siglas, simplificación excesiva y complicación excesiva.</p><p class="muted" style="margin:0;font-size:14px">Mejor puntaje: ${S.spec.best}/${SPEC_FLAGS}. Cada frase nueva vale 10 XP.</p></div></aside></div>`;
 };
 function specResult(){let hits=0,fp=0;SPEC.forEach((s,i)=>{if(specMarks.has(i)){if(s.f)hits++;else fp++;}});return {hits,fp};}
-function toggleSeg(i){if(specChecked)return;specMarks.has(i)?specMarks.delete(i):specMarks.add(i);render();const el=document.querySelector(`[data-seg="${i}"]`);el&&el.focus();}
+function toggleSeg(i){if(specChecked)return;specMarks.has(i)?specMarks.delete(i):specMarks.add(i);render();const el=document.querySelector(`[data-seg="${i}"]`);if(el)el.focus();}
 function checkSpec(){specChecked=true;const {hits,fp}=specResult();
  if(hits>S.spec.best){S.xp+=(hits-S.spec.best)*10;S.spec.best=hits;}
  if(hits===SPEC_FLAGS&&fp===0)S.spec.perfect=true;
- if(hits>=4)unlock("spec-watchlist");
  save();checkBadges();render();}
 
 /* ----- Nivel 5: forja ----- */
 let fz=null;
 function forgeStart(id){const m=MNEMO.find(x=>x.id===id);const bank=shuffle(m.w.concat(m.x).map(([w,g])=>({w,g})));fz={id,slots:m.w.map(()=>null),bank,checked:false,msg:""};}
+// Una palabra va bien en una casilla si es correcta para esa letra; las letras repetidas (RCRCRC, WWWWWHKE) aceptan cualquier orden entre sí.
+const slotOk=(m,i,w)=>m.w.some(([x],j)=>x===w&&m.acr[j]===m.acr[i]);
 VIEWS.forja=()=>{
  if(!fz)forgeStart((MNEMO.find(m=>!S.forge[m.id])||MNEMO[0]).id);
  const m=MNEMO.find(x=>x.id===fz.id);const used=new Set(fz.slots.filter(s=>s!==null));
@@ -740,7 +1035,7 @@ VIEWS.forja=()=>{
  <div class="forge"><div class="m-list" role="group" aria-label="Mnemotecnias">${MNEMO.map(x=>`<button data-forge="${x.id}" aria-pressed="${x.id===fz.id}"><span>${x.acr}</span><span class="ck">${S.forge[x.id]?"✓":""}</span></button>`).join("")}</div>
   <div class="bench px">
    <div><p class="lbl">${card&&card.src?"De "+esc(card.src):"Clásico"}</p><h2 style="font-size:22px;color:var(--amber)">${m.acr}</h2></div>
-   <div class="slots">${fz.slots.map((s,i)=>{const it=s!==null?fz.bank[s]:null;let c="slot";if(!it)c+=" empty";else if(fz.checked)c+=it.w===m.w[i][0]?" right":" wrong";
+   <div class="slots">${fz.slots.map((s,i)=>{const it=s!==null?fz.bank[s]:null;let c="slot";if(!it)c+=" empty";else if(fz.checked)c+=slotOk(m,i,it.w)?" right":" wrong";
      return `<button class="${c}" data-slot="${i}" aria-label="Letra ${m.acr[i]}: ${it?esc(it.w):"vacía"}"><span class="letter">${m.acr[i]}</span><span class="w">${it?esc(it.w):"—"}</span></button>`;}).join("")}</div>
    <div><p class="lbl">Banco de palabras</p><div class="bank">${fz.bank.map((b,j)=>`<button data-bank="${j}" ${used.has(j)?"disabled":""}>${esc(b.w)}<small>${esc(b.g)}</small></button>`).join("")}</div></div>
    <div class="row"><button class="btn" data-forge-check>Comprobar</button><button class="btn ghost" data-forge-clear>Vaciar</button></div>
@@ -749,56 +1044,385 @@ VIEWS.forja=()=>{
 };
 function forgeCheck(){const m=MNEMO.find(x=>x.id===fz.id);
  if(fz.slots.some(s=>s===null)){fz.msg="Faltan letras por llenar.";fz.checked=false;render();return;}
- fz.checked=true;const ok=fz.slots.every((s,i)=>fz.bank[s].w===m.w[i][0]);
+ fz.checked=true;const ok=fz.slots.every((s,i)=>slotOk(m,i,fz.bank[s].w));
  if(ok){if(!S.forge[m.id]){S.forge[m.id]=true;S.xp+=15;fz.msg=`¡${m.acr} forjada! +15 XP.`;}else fz.msg=`¡${m.acr} correcta otra vez!`;unlock(m.id);save();checkBadges();}
  else fz.msg="Algunas piezas no van ahí. Cambia las marcadas en rojo.";
  render();}
 
+/* ----- Nivel 6: dos sesiones ----- */
+function seedSes(){return [[1,"2 Comprar leche",2],[2,"Revisar presupuesto",4],[3,"10 Pagar renta",5],[4,"Llamar al plomero",3]].map(([id,titulo,prio])=>({id,titulo,prio,ver:1,deleted:false}));}
+const copyTasks=list=>list.filter(t=>!t.deleted).map(t=>({id:t.id,titulo:t.titulo,prio:t.prio,ver:t.ver}));
+function freshSes(){const server=seedSes();const mk=()=>({cache:copyTasks(server),sel:null,online:true,logged:true,loginAt:0,sort:"id",saving:null,msg:""});return {server,invites:[],revokedAt:0,p:{a:mk(),b:mk()},form:{}};}
+const ses=freshSes();
+function sesReset(){["a","b"].forEach(k=>{const s=ses.p[k].saving;if(s)clearTimeout(s.timer);});Object.assign(ses,freshSes());}
+const PHONE={a:"Teléfono A",b:"Teléfono B"};
+const other=k=>k==="a"?"b":"a";
+const sTask=id=>ses.server.find(t=>t.id===id);
+function sesSorted(p){const l=p.cache.slice();return p.sort==="titulo"?l.sort((x,y)=>x.titulo<y.titulo?-1:x.titulo>y.titulo?1:0):l.sort((x,y)=>x.id-y.id);} // ← orden de texto puro, a propósito
+function numInversion(list){const n=list.map(t=>{const m=t.titulo.match(/^(\d+)/);return m?+m[1]:null;}).filter(x=>x!==null);return n.some((x,i)=>n.slice(i+1).some(y=>y<x));}
+function sesFill(k){const p=ses.p[k],c=p.cache.find(t=>t.id===p.sel);if(c){ses.form[`ses-${k}-titulo`]=c.titulo;ses.form[`ses-${k}-prio`]=String(c.prio);}}
+function sesAuth(k){const p=ses.p[k];
+ // Provocar: «Cerrar sesión en todos los dispositivos» en un teléfono y luego sincronizar, guardar, borrar o compartir en el otro.
+ if(ses.revokedAt&&p.loginAt<ses.revokedAt)triggerBug("s-logout",`${PHONE[other(k)]} cerró sesión en todos los dispositivos\n${PHONE[k]} siguió operando con su sesión vieja`);}
+function sesSave(k){const p=ses.p[k],f=ses.form;if(p.saving)return;
+ if(!p.online){p.msg="Sin conexión: tus cambios no se guardaron.";return;}
+ const c=p.cache.find(t=>t.id===p.sel);if(!c)return;
+ const titulo=String(f[`ses-${k}-titulo`]??c.titulo).trim();const prio=+(f[`ses-${k}-prio`]??c.prio);
+ if(!titulo){p.msg="Escribe un título.";return;}
+ sesAuth(k);const st=sTask(c.id);
+ if(st.deleted){const old=st.titulo;st.deleted=false;st.titulo=titulo;st.prio=prio;st.ver++;Object.assign(c,{titulo,prio,ver:st.ver});p.msg="Guardado ✓";
+  // Provocar: borrar una tarea en un teléfono y, sin sincronizar el otro, editarla y guardarla ahí.
+  triggerBug("s-revive",`${PHONE[other(k)]} borró «${old}»\n${PHONE[k]} la editó y guardó: volvió a existir`);return;}
+ const stale=c.ver<st.ver&&(st.titulo!==c.titulo||st.prio!==c.prio);const before=`«${st.titulo}» · P${st.prio}`;
+ // El guardado va en dos pasos (título, luego prioridad) y no es atómico, a propósito.
+ st.titulo=titulo;st.ver++;Object.assign(c,{titulo,prio,ver:st.ver});p.msg="Guardando…";
+ p.saving={id:c.id,prio,timer:setTimeout(()=>{const s=sTask(c.id);s.prio=prio;s.ver++;c.ver=s.ver;p.saving=null;p.msg="Guardado ✓";if(cur==="sesiones")render();},2000)};
+ // Provocar: editar la misma tarea en los dos teléfonos y guardar en ambos sin sincronizar entre medio.
+ if(stale)triggerBug("s-lost",`servidor tenía: ${before}\n${PHONE[k]} guardó encima: «${titulo}» · P${prio}\nsin aviso de conflicto`);}
+function sesCut(k){const p=ses.p[k],s=p.saving;clearTimeout(s.timer);p.saving=null;const st=sTask(s.id);p.msg="Sin conexión: el guardado no terminó.";
+ // Provocar: cambiar título y prioridad, guardar y activar el modo avión (o cerrar sesión) mientras dice «Guardando…».
+ if(st&&s.prio!==st.prio)triggerBug("s-partial",`servidor: «${st.titulo}» (título nuevo) · P${st.prio} (prioridad vieja)\n${PHONE[k]} quería guardar P${s.prio}`);}
+function sesAct(act,k,id){const p=ses.p[k];if(!p)return;
+ const offline=()=>{p.msg="Sin conexión: no se pudo completar.";};
+ if(act==="pick"){p.sel=id;sesFill(k);p.msg="";}
+ else if(act==="sort"){p.sort=p.sort==="id"?"titulo":"id";p.msg="";
+  // Provocar: «Ordenar: por título» con las tareas iniciales.
+  if(p.sort==="titulo"&&numInversion(sesSorted(p)))triggerBug("s-sort",`orden por título:\n${sesSorted(p).map(t=>"  "+t.titulo).join("\n")}`);}
+ else if(act==="sync"){if(!p.online)offline();else{sesAuth(k);p.cache=copyTasks(ses.server);if(!p.cache.some(t=>t.id===p.sel))p.sel=null;sesFill(k);p.msg="Sincronizado.";}}
+ else if(act==="save")sesSave(k);
+ else if(act==="del"){if(!p.online)offline();else{const st=sTask(p.sel);if(st){sesAuth(k);st.deleted=true;st.ver++;p.cache=p.cache.filter(t=>t.id!==p.sel);p.sel=null;p.msg="Tarea borrada.";}}}
+ else if(act==="share"){if(!p.online)offline();else{sesAuth(k);const now=Date.now();ses.invites.push(now);const recent=ses.invites.filter(t=>now-t<=2000);p.msg=`Invitación enviada a beto@correo.mx (${ses.invites.length} en total).`;
+  // Provocar: tres o más clics en «Compartir con Beto» en menos de 2 segundos.
+  if(recent.length>=3)triggerBug("s-flood",`${recent.length} invitaciones a beto@correo.mx en ${now-recent[0]} ms`);}}
+ else if(act==="air"){p.online=!p.online;p.msg=p.online?"Conexión recuperada.":"Modo avión activado.";if(!p.online&&p.saving)sesCut(k);}
+ else if(act==="logout"){if(p.saving)sesCut(k);p.logged=false;p.sel=null;ses.revokedAt=Date.now();p.msg="";}
+ else if(act==="login"){p.logged=true;p.loginAt=Date.now();if(p.online)p.cache=copyTasks(ses.server);p.msg=p.online?"Sesión iniciada.":"Sesión iniciada sin conexión.";}
+ render();}
+function phoneHTML(k){const p=ses.p[k];let inner;
+ if(!p.logged)inner=`<div class="ses-out"><p>Sesión cerrada.</p><button class="app-btn" data-ses="login" data-k="${k}">Iniciar sesión</button></div>`;
+ else{const list=sesSorted(p);const c=p.cache.find(t=>t.id===p.sel);
+  inner=`<h3 class="app-h">Tareas de Ana</h3>
+  <ul class="ses-list">${list.map(t=>`<li><button class="ses-item" data-ses="pick" data-k="${k}" data-id="${t.id}" aria-pressed="${t.id===p.sel}"><span>${esc(t.titulo)}</span><b>P${t.prio}</b></button></li>`).join("")||`<li class="muted-s">Sin tareas.</li>`}</ul>
+  <div class="mini-row"><button class="mini-btn" data-ses="sort" data-k="${k}">Ordenar: ${p.sort==="titulo"?"por título":"por creación"}</button><button class="mini-btn" data-ses="sync" data-k="${k}">Sincronizar</button></div>
+  ${c?`<div class="ses-edit"><label for="ses-${k}-titulo">Título</label><input id="ses-${k}-titulo" value="${esc(c.titulo)}" autocomplete="off">
+   <label for="ses-${k}-prio">Prioridad</label><select id="ses-${k}-prio">${[1,2,3,4,5].map(n=>`<option value="${n}" ${n===c.prio?"selected":""}>${n}</option>`).join("")}</select>
+   <div class="mini-row"><button class="app-btn" data-ses="save" data-k="${k}" ${p.saving?"disabled":""}>Guardar</button><button class="mini-btn" data-ses="del" data-k="${k}">Borrar</button></div></div>`:`<p class="note">Toca una tarea para editarla.</p>`}
+  ${p.saving?`<div class="ses-saving" role="status">Guardando… título ✓ · prioridad en camino</div>`:""}
+  <div class="mini-row"><button class="mini-btn" data-ses="share" data-k="${k}">Compartir con Beto</button><button class="mini-btn" data-ses="air" data-k="${k}" aria-pressed="${!p.online}">Modo avión: ${p.online?"no":"sí"}</button></div>
+  <button class="mini-btn wide" data-ses="logout" data-k="${k}">Cerrar sesión en todos los dispositivos</button>`;}
+ const bad=/Sin conexión|Escribe/.test(p.msg);
+ return `<div class="phone px"><div class="phone-bar"><span>${PHONE[k]} · Ana</span><span>${p.online?"4G":"SIN RED"}</span></div><div class="screen ses-screen" id="ses-${k}">${inner}<div class="app-msg" aria-live="polite">${p.msg?`<span class="${bad?"err":"ok"}">${esc(p.msg)}</span>`:""}</div></div></div>`;}
+function serverHTML(){return `<div class="admin px"><p class="lbl">Servidor · vista de administración</p><div class="tbl"><table><thead><tr><th>id</th><th>título</th><th>prioridad</th><th>versión</th><th>estado</th></tr></thead><tbody>${ses.server.map(t=>`<tr><td>${t.id}</td><td>${esc(t.titulo)}</td><td>P${t.prio}</td><td>${t.ver}</td><td>${t.deleted?"borrada":"activa"}</td></tr>`).join("")}</tbody></table></div>
+ <p class="muted" style="font-size:14px;margin:10px 0 0">Invitaciones enviadas a beto@correo.mx: ${ses.invites.length}. Este panel es un punto de contacto: muestra lo que de verdad guardó el servidor.</p></div>`;}
+VIEWS.sesiones=()=>`${head(6,"Dos sesiones","Ana usa TaskPal en dos teléfonos con la misma cuenta. Cada teléfono trabaja con su copia local hasta sincronizar. Hay 6 bugs.")}
+ <div class="mission"><div style="display:grid;gap:22px;min-width:0;grid-template-columns:minmax(0,1fr)"><div class="duo">${phoneHTML("a")}${phoneHTML("b")}</div>${serverHTML()}</div><aside class="side" id="side">${sideHTML("sesiones")}</aside></div>`;
+
+/* ----- Nivel 7: triaje del release ----- */
+const tri={picks:new Set(),checked:false,msg:"",cmsg:"",form:{}};
+const triScore=()=>[...tri.picks].reduce((s,i)=>s+AREAS[i].w,0)/TRI_MAX;
+VIEWS.triaje=()=>{const n=tri.picks.size;const sc=triScore();const ch=TORCH_Q.map(q=>tri.form[q[0]]||"");const chDone=S.triage.charter&&ch.every(Boolean);
+ return `${head(7,"Triaje del release","Mañana sale TaskPal 2.0 y solo tienes cinco fichas de una hora para probar. Decide dónde ponerlas: hay varias respuestas buenas.")}
+ <div class="mission"><div style="display:grid;gap:18px;min-width:0">
+  <div class="px side-box charter"><p class="lbl">Paso opcional · charter de la sesión</p><p style="margin:0">Antes de repartir fichas, arma el plan de tu sesión eligiendo una opción de cada lista.</p>
+   ${TORCH_Q.map(([id,l,ops])=>`<div><label for="${id}">${esc(l)}</label><select id="${id}"><option value="">— elige —</option>${ops.map(o=>`<option>${esc(o)}</option>`).join("")}</select></div>`).join("")}
+   <div class="row"><button class="btn ghost" data-torch>Guardar charter</button>${chDone?`<span class="muted">Charter listo ✓</span>`:""}</div>
+   <p class="forge-msg" aria-live="polite">${esc(tri.cmsg)}</p></div>
+  <div class="areas">${AREAS.map((a,i)=>{const on=tri.picks.has(i);return `<article class="area px ${on?"on":""}"><h3>${esc(a.n)}</h3><p>${esc(a.c)}</p>
+   ${tri.checked?`<p class="tags">${a.tags.length?a.tags.map(t=>`<span>${t} · ${RC[t]}</span>`).join(""):`<span>sin etiquetas</span>`}</p><p class="w">Peso experto: ${"■".repeat(a.w)}${"□".repeat(3-a.w)} ${a.w}/3</p><p class="why">${esc(a.why)}</p>`:""}
+   <button class="btn ${on?"":"ghost"}" data-tri="${i}" aria-pressed="${on}" ${tri.checked?"disabled":""}>${on?"Quitar ficha":"Poner ficha"}</button></article>`;}).join("")}</div>
+  <div class="row"><span class="tokens" role="img" aria-label="Fichas usadas: ${n} de ${TRI_TOKENS}">${"●".repeat(n)}${"○".repeat(TRI_TOKENS-n)}</span>${tri.checked?`<button class="btn" data-tri-retry>Intentar de nuevo</button>`:`<button class="btn" data-tri-check ${n<TRI_TOKENS?"disabled":""}>Revisar (${n}/${TRI_TOKENS})</button>`}</div>
+  <p class="forge-msg" aria-live="polite">${esc(tri.msg)}</p>
+  ${tri.checked?`<div class="px side-box"><p class="lbl">Resultado</p><p class="big">${Math.round(sc*100)} %</p><p style="margin:0">Cubriste ${Math.round(sc*TRI_MAX)} de ${TRI_MAX} puntos de riesgo posibles. Las etiquetas de cada área muestran por qué pesa lo que pesa.</p></div>`:""}
+ </div><aside class="side"><div class="px side-box"><p class="lbl">Qué pesa más</p><p style="margin:0 0 8px">Piensa en qué es nuevo, qué es esencial, qué es riesgoso, qué depende de la configuración, qué se reparó hace poco y qué falla una y otra vez.</p>
+  <p class="muted" style="margin:0;font-size:14px">Metas: ${TRI_GOALS.map(g=>`${Math.round(g*100)} %${S.triage.best>=g?" ✓":""}`).join(" · ")}. Mejor puntaje: ${Math.round(S.triage.best*100)} %. Cada meta nueva vale 20 XP.</p></div></aside></div>`;};
+function triPick(i){if(tri.checked)return;tri.msg="";if(tri.picks.has(i))tri.picks.delete(i);else if(tri.picks.size>=TRI_TOKENS)tri.msg="Ya usaste tus cinco fichas: quita una primero.";else tri.picks.add(i);render();}
+function triCheck(){if(tri.picks.size<TRI_TOKENS)return;tri.checked=true;const sc=triScore();const before=triUnits();S.triage.reviewed=true;if(sc>S.triage.best)S.triage.best=sc;const gained=triUnits()-before;S.xp+=gained*20;tri.msg=gained?`Nueva meta alcanzada: +${gained*20} XP.`:"";save();checkBadges();render();}
+function torchSave(){const ch=TORCH_Q.map(q=>tri.form[q[0]]||"");if(!ch.every(Boolean)){tri.cmsg="Elige una opción en las cinco listas.";return render();}
+ if(!S.triage.charter){S.triage.charter=true;S.xp+=10;tri.cmsg="Charter listo: +10 XP.";}else tri.cmsg="Charter actualizado.";save();checkBadges();render();}
+
+/* ----- Nivel 8: ruleta de personas ----- */
+let pz=null;
+const PER=id=>PERSONAS.find(p=>p.id===id);
+function pzSpin(){const done=S.personas.done;let pool=PERSONAS.filter(p=>!done[p.id]);if(!pool.length)pool=PERSONAS.slice();const p=pool[Math.floor(Math.random()*pool.length)];pz={id:p.id,order:shuffle([0,1,2]),rorder:shuffle([0,1,2]),pick:null,rpick:null,okAll:false,replay:!!done[p.id]};}
+VIEWS.personas=()=>{const n=Math.min(PZ_ROUNDS,nPersonas());let body;
+ if(!pz)body=`<div class="px side-box"><p class="lbl">Ruleta</p><p style="margin:0 0 12px">Gira la ruleta para conocer a la siguiente persona usuaria. Después elige qué pantalla de TaskPal le falla y por qué.</p><button class="btn" data-pz-spin>Girar la ruleta</button></div>`;
+ else{const p=PER(pz.id);
+  body=`<div class="persona px"><p class="lbl">Persona usuaria</p><h3>${esc(p.n)}</h3><p>${esc(p.d)}</p></div>
+  <p class="q">1. ¿Qué pantalla le falla a esta persona?</p>
+  <div class="pz-screens">${pz.order.map(i=>{const s=p.s[i];let c="pz-s";if(pz.pick!==null){if(i===0)c+=" right";else if(i===pz.pick)c+=" wrong";}
+   return `<article class="${c}"><div class="pz-mock"><p class="pz-t">${esc(s.t)}</p><ul>${s.f.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></div><button class="btn ghost" data-pz-screen="${i}" ${pz.pick!==null?"disabled":""}>Esta le falla</button></article>`;}).join("")}</div>
+  ${pz.pick!==null?`<p class="q">${pz.pick===0?"¡Bien visto!":"La pantalla que falla es «"+esc(p.s[0].t)+"»."} 2. ¿Por qué le falla?</p><div class="opts">${pz.rorder.map(i=>{let c="opt";if(pz.rpick!==null){if(i===0)c+=" right";else if(i===pz.rpick)c+=" wrong";}return `<button class="${c}" data-pz-reason="${i}" ${pz.rpick!==null?"disabled":""}>${esc(p.r[i])}</button>`;}).join("")}</div>`:""}
+  ${pz.rpick!==null?`<div class="px side-box verdict"><p class="ttl ${pz.okAll?"good":"meh"}">${pz.replay?"Ronda de repaso (sin XP)":pz.okAll?"¡Exacto! +25 XP":"Casi. +10 XP por el intento"}</p><p>${esc(p.why)}</p><p class="muted">Heurística: ${p.kind==="enanos"?"Siete enanos":"Diversidad e inclusión"}.</p><div><button class="btn" data-pz-next>Siguiente persona</button></div></div>`:""}`;}
+ return `${head(8,"Ruleta de personas","No eres todas las personas usuarias. Cada ronda trae a alguien distinto y tres pantallas de TaskPal: encuentra la que le falla.")}
+ <div class="mission"><div style="display:grid;gap:18px;min-width:0">${body}</div><aside class="side"><div class="px side-box"><p class="lbl">Rondas</p><p class="big">${n}/${PZ_ROUNDS}</p>${bar(n/PZ_ROUNDS)}
+  <ul class="found">${PERSONAS.filter(p=>S.personas.done[p.id]).map(p=>`<li><b>${esc(p.n)}</b><span>${S.personas.done[p.id].ok?"a la primera":"con ayuda"}</span></li>`).join("")}</ul></div>
+  <div class="px side-box"><p class="lbl">Sobre las personas</p><p class="muted" style="margin:0;font-size:14px">Cada persona resume una forma real de usar el software. Los rasgos y las pantallas son interpretaciones de este juego.</p></div></aside></div>`;};
+function pzScreen(i){if(!pz||pz.pick!==null)return;pz.pick=i;render();const f=$("[data-pz-reason]");if(f)f.focus();}
+function pzReason(i){if(!pz||pz.pick===null||pz.rpick!==null)return;pz.rpick=i;pz.okAll=pz.pick===0&&i===0;
+ if(!S.personas.done[pz.id]){S.personas.done[pz.id]={ok:pz.okAll};S.xp+=pz.okAll?25:10;}
+ save();checkBadges();render();const f=$("[data-pz-next]");if(f)f.focus();}
+
+/* ----- Nivel 9: accesibilidad ----- */
+// Colores reales de la pantalla simulada; el medidor de contraste los usa tal cual.
+const ALLY_COL={titulo:["#1a1236","#ece6ff","Encabezado «Nueva tarea»"],label:["#2c2063","#ece6ff","Etiqueta «Título»"],help:["#b4acd2","#ece6ff","Texto de ayuda"],save:["#ece6ff","#1a1236","Botón Guardar"],menu:["#3d2f8a","#ece6ff","Enlaces del menú"]};
+function lum(h){const c=[1,3,5].map(i=>parseInt(h.slice(i,i+2),16)/255).map(v=>v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4));return .2126*c[0]+.7152*c[1]+.0722*c[2];}
+const ratio=(a,b)=>{const x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05);};
+function freshAlly(){return {sr:false,gray:false,zoom:"100",contrast:"",saved:false,err:"",tabs:0,muted:false,vmsg:"",srLog:[],form:{}};}
+const ally=freshAlly();
+function allyReset(){Object.assign(ally,freshAlly());}
+VIEWS.a11y=()=>{const C=ALLY_COL;
+ return `${head(9,"Accesibilidad","Esta pantalla de TaskPal es real: recórrela con el teclado, con el lector de pantalla simulado y con las herramientas de prueba. Hay 6 bugs.")}
+ <div class="mission"><div class="stage">
+  ${phone(`<div class="ally-app ${ally.gray?"gray":""}" id="ally-app" style="--z:${+ally.zoom/100}">
+   <nav class="ally-menu" id="ally-menu" aria-label="Menú de TaskPal">${["Inicio","Tareas","Ajustes"].map(x=>`<a href="#" data-ally-link style="color:${C.menu[0]}">${x}</a>`).join("")}</nav>
+   <h3 class="ally-h" style="color:${C.titulo[0]}">Nueva tarea</h3>
+   <div class="ally-video"><div class="ally-vbox" aria-hidden="true">${pix(FACE)}</div><p class="ally-vt">Video: Bienvenida a TaskPal · 0:45</p>
+    <div class="ally-vctl"><button class="ally-b" data-ally="play">▶ Reproducir</button><button class="ally-b" data-ally="mute" aria-pressed="${ally.muted}">${ally.muted?"Activar sonido":"Silenciar"}</button><button class="ally-b" data-ally="cc">CC</button></div>
+    <p class="ally-vmsg">${esc(ally.vmsg)}</p></div>
+   <label for="ally-titulo" style="color:${C.label[0]}">Título</label>
+   <div class="ally-row"><input id="ally-titulo" class="${ally.saved?"saved":""}" autocomplete="off"><button class="ally-save" data-ally="save" style="color:${C.save[0]};background:${C.save[1]}">Guardar</button></div>
+   <p class="ally-help" style="color:${C.help[0]}">Máximo 40 caracteres. Empieza con un verbo.</p>
+   <button class="ally-icon" data-ally="trash">${pix(TRASH)}</button>
+   ${ally.err?`<p class="ally-err" role="alert">⚠ ${esc(ally.err)}</p>`:""}
+  </div>`,"ally-screen")}
+  <div class="px side-box ally-tools"><p class="lbl">Herramientas de prueba</p>
+   <button class="btn ghost" data-ally="sr" aria-pressed="${ally.sr}">Lector de pantalla simulado: ${ally.sr?"encendido":"apagado"}</button>
+   <pre class="term wrap" id="ally-sr">${ally.sr?esc(ally.srLog.join("\n")||"(enfoca algo dentro de la app)"):"(apagado)"}</pre>
+   <button class="btn ghost" data-ally="gray" aria-pressed="${ally.gray}">Escala de grises: ${ally.gray?"sí":"no"}</button>
+   <div><label for="ally-zoom">Zoom de la app</label><select id="ally-zoom">${["100","150","200"].map(v=>`<option value="${v}">${v} %</option>`).join("")}</select></div>
+   <div><label for="ally-contrast">Medidor de contraste</label><select id="ally-contrast"><option value="">— elige un texto —</option>${Object.entries(C).map(([k,v])=>`<option value="${k}">${v[2]}</option>`).join("")}</select></div>
+   ${ally.contrast?(()=>{const [fg,bg,nm]=C[ally.contrast];const r=ratio(fg,bg);return `<p class="contrast"><span style="background:${bg};color:${fg}">Aa</span>${esc(nm)}: <b>${r.toFixed(1)}:1</b> ${r>=4.5?"✓ suficiente":"✗ insuficiente"} (mínimo 4.5:1)</p>`;})():""}
+   <p class="muted" style="font-size:14px;margin:0">Si el teclado te deja sin salida, presiona Esc.</p>
+  </div>
+ </div><aside class="side" id="side">${sideHTML("a11y")}</aside></div>`;};
+function allyName(el){if(el.getAttribute("aria-label"))return el.getAttribute("aria-label");if(el.id){const l=document.querySelector(`label[for="${el.id}"]`);if(l)return l.textContent.trim();}return el.textContent.trim();}
+function announce(el){const role={A:"enlace",BUTTON:"botón",INPUT:"campo de texto",SELECT:"lista"}[el.tagName];if(!role)return;
+ const name=allyName(el);let line=name?`${name}, ${role}`:role;if(el.getAttribute("aria-pressed")==="true")line+=", activado";
+ ally.srLog=ally.srLog.concat(line).slice(-5);const o=$("#ally-sr");if(o)o.textContent=ally.srLog.join("\n");
+ // Provocar: encender el lector de pantalla simulado y enfocar (Tab o clic) el ícono del bote de basura.
+ if(!name&&el.classList.contains("ally-icon"))triggerBug("x-name",`lector de pantalla: «${line}»\n¿botón de qué?`);}
+function allyAct(a,el){
+ if(a==="sr"){ally.sr=!ally.sr;ally.srLog=[];return render();}
+ if(a==="gray"){ally.gray=!ally.gray;render();
+  // Provocar: guardar una tarea y encender la escala de grises (o al revés).
+  if(ally.gray&&ally.saved)triggerBug("x-color","aviso de éxito: borde verde, sin ícono ni texto\nen escala de grises: no se distingue");return;}
+ if(a==="save"){const v=String(ally.form["ally-titulo"]||"").trim();if(!v){ally.err="Escribe un título.";ally.saved=false;}else{ally.err="";ally.saved=true;}render();
+  if(ally.saved&&ally.gray)triggerBug("x-color","aviso de éxito: borde verde, sin ícono ni texto\nen escala de grises: no se distingue");return;}
+ if(a==="trash"){if(ally.sr)announce(el);setField("ally-titulo","");ally.saved=false;return render();}
+ if(a==="mute"){ally.muted=!ally.muted;return render();}
+ if(a==="play"){ally.vmsg=ally.muted?"Reproduciendo sin sonido: una persona habla a cámara, pero no hay subtítulos.":"Reproduciendo: se escucha la narración de bienvenida.";render();
+  // Provocar: silenciar y reproducir el video, o tocar «CC».
+  if(ally.muted)triggerBug("x-cc","video reproducido en silencio\nsin subtítulos ni transcripción");return;}
+ if(a==="cc"){ally.vmsg="Este video no tiene subtítulos ni transcripción.";render();triggerBug("x-cc","CC → «Este video no tiene subtítulos ni transcripción.»");}
+}
+function allyChange(t){
+ if(t.id==="ally-zoom"){ally.zoom=t.value;render();const app=$("#ally-app"),b=$(".ally-save");if(!app||!b)return;const over=Math.round(b.getBoundingClientRect().right-app.getBoundingClientRect().right);
+  // Provocar: zoom de la app al 200 %.
+  if(over>1)triggerBug("x-zoom",`zoom ${ally.zoom} %: el botón Guardar queda ${over} px fuera de la pantalla`);}
+ if(t.id==="ally-contrast"){ally.contrast=t.value;render();
+  // Provocar: medir el «Texto de ayuda».
+  if(t.value==="help"){const [fg,bg]=ALLY_COL.help;triggerBug("x-contrast",`texto de ayuda: ${ratio(fg,bg).toFixed(1)}:1\nmínimo recomendado: 4.5:1`);}}
+ if(t.id==="ally-titulo"&&ally.saved){ally.saved=false;t.classList.remove("saved");}
+}
+
+/* ----- Nivel 10: día de release ----- */
+const REL_MS=10*60*1000;
+function seedRel(){return {tasks:[[1,"Preparar demo del release","trabajo"],[2,"Revisar notas de versión","trabajo"],[3,"Comprar café","casa"],[4,"Responder a soporte","trabajo"],[5,"Regar las plantas","casa"]].map(([id,t,tag])=>({id,t,tag,done:false,cnt:0,arch:false,att:[]})),tags:[["trabajo","Trabajo"],["casa","Casa"],["viajes","Viajes"]]};}
+function freshRel(){const s=seedRel();return {started:false,running:false,acc:0,since:0,timeUp:false,tab:"tareas",tasks:s.tasks,tags:s.tags,next:6,doneToday:0,edit:null,sel:new Set(),exp:null,csv:"",log:[],pomos:0,pmsg:"",msg:"",msgErr:false,amsg:"",rmsg:"",form:{}};}
+const rel=freshRel();let relTick=null;
+function relReset(){clearInterval(relTick);relTick=null;Object.assign(rel,freshRel());}
+const relElapsed=()=>rel.acc+(rel.running?Date.now()-rel.since:0);
+const mmss=ms=>{const s=Math.max(0,Math.round(ms/1000));return `${p2(Math.floor(s/60))}:${p2(s%60)}`;};
+const timerText=()=>reduced()?mmss(relElapsed()):mmss(REL_MS-relElapsed());
+const relActive=()=>rel.tasks.filter(t=>!t.arch);
+const tagName=id=>{const g=rel.tags.find(x=>x[0]===id);return g?g[1]:String(undefined);}; // ← etiqueta borrada: «undefined», a propósito
+const relSnap=()=>relActive().map(t=>({id:t.id,t:t.t,tag:t.tag}));
+const relLog=m=>{rel.log.push(`${clock()} ${m}`);};
+function relStartTick(){if(!relTick)relTick=setInterval(()=>{const el=$("#rel-timer");if(el)el.textContent=timerText();if(rel.running&&!rel.timeUp&&relElapsed()>=REL_MS){rel.timeUp=true;if(cur==="release")render();}},1000);}
+function relPause(){if(rel.running){rel.acc+=Date.now()-rel.since;rel.running=false;}}
+function relMsg(t,err){rel.msg=t;rel.msgErr=!!err;}
+function relApp(){
+ if(!rel.started)return `<div class="overlay-app"><p>TaskPal 2.0 está listo para probarse.</p><p style="font-size:18px">${reduced()?"Tómate el tiempo que necesites.":"Tienes 10 minutos y puedes pausar."}</p><button class="app-btn" data-rel="start">Empezar el día de release</button></div>`;
+ const tabs=[["tareas","Tareas"],["etiquetas","Etiquetas"],["enfoque","Enfoque"],["ajustes","Ajustes"]];
+ const act=relActive();let body="";
+ if(rel.tab==="tareas")body=`<p class="rel-count">Tienes ${act.filter(t=>!t.done).length} tareas pendientes · Completadas hoy: ${rel.doneToday}</p>
+  <ul class="rel-list">${act.map(t=>`<li class="${t.done?"done":""}"><input type="checkbox" data-nopersist data-rel-sel="${t.id}" aria-label="Seleccionar «${esc(t.t)}»" ${rel.sel.has(t.id)?"checked":""}><span class="rel-t">${esc(t.t)}<small>${esc(tagName(t.tag))}${t.att.length?" · adjunto: "+esc(t.att.join(", ")):""}</small></span>
+   <span class="rel-acts"><button class="mini-btn" data-rel="done" data-id="${t.id}" aria-label="${t.done?"Marcar como pendiente":"Completar"}: ${esc(t.t)}">${t.done?"↺ Pendiente":"✓ Completar"}</button><button class="mini-btn" data-rel="edit" data-id="${t.id}">Editar</button><button class="mini-btn" data-rel="del" data-id="${t.id}">Borrar</button></span></li>`).join("")||`<li class="muted-s">No hay tareas.</li>`}</ul>
+  <div class="mini-row"><button class="mini-btn" data-rel="archive">Archivar seleccionadas</button><button class="mini-btn" data-rel="export">Exportar CSV</button></div>
+  <form id="rel-form" novalidate style="margin-top:10px"><label for="rel-titulo">${rel.edit?"Renombrar tarea":"Nueva tarea"} (máximo 40 caracteres)</label><input id="rel-titulo" autocomplete="off">
+   <label for="rel-tag">Etiqueta</label><select id="rel-tag">${rel.tags.map(g=>`<option value="${g[0]}">${esc(g[1])}</option>`).join("")}</select>
+   <div class="mini-row"><button class="app-btn" type="submit">${rel.edit?"Guardar cambios":"Agregar"}</button>${rel.edit?`<button class="mini-btn" type="button" data-rel="cancel">Cancelar</button>`:""}</div></form>
+  <div class="app-msg" aria-live="polite">${rel.msg?`<span class="${rel.msgErr?"err":"ok"}">${esc(rel.msg)}</span>`:""}</div>`;
+ else if(rel.tab==="etiquetas")body=`<ul class="rel-list">${rel.tags.map(g=>{const n=rel.tasks.filter(t=>t.tag===g[0]&&!t.arch).length;return `<li><span></span><span class="rel-t">${esc(g[1])}<small>${n} ${n===1?"tarea":"tareas"}</small></span><span class="rel-acts"><button class="mini-btn" data-rel="deltag" data-tag="${g[0]}">Borrar etiqueta</button></span></li>`;}).join("")||`<li class="muted-s">No hay etiquetas.</li>`}</ul>
+  <div class="app-msg" aria-live="polite">${rel.msg?`<span class="${rel.msgErr?"err":"ok"}">${esc(rel.msg)}</span>`:""}</div>`;
+ else if(rel.tab==="enfoque")body=`<label for="rel-min">Duración del pomodoro (1 a 60 minutos)</label><input id="rel-min" value="25" inputmode="numeric" autocomplete="off">
+  <div class="mini-row"><button class="app-btn" data-rel="pomo">Iniciar</button></div><p class="rel-count" style="margin-top:12px">Pomodoros completados: ${rel.pomos}</p><div class="app-msg" aria-live="polite">${rel.pmsg?`<span class="${/Escribe|máximo|negativ/i.test(rel.pmsg)?"err":"ok"}">${esc(rel.pmsg)}</span>`:""}</div>`;
+ else body=`<label for="rel-space">Espacio libre en el dispositivo</label><select id="rel-space"><option value="2gb">2 GB</option><option value="5mb">5 MB</option></select>
+  <label for="rel-att">Adjuntar foto (8 MB) a</label><select id="rel-att">${act.map(t=>`<option value="${t.id}">${esc(t.t)}</option>`).join("")}</select>
+  <div class="mini-row"><button class="app-btn" data-rel="attach" ${act.length?"":"disabled"}>Adjuntar foto</button></div><div class="app-msg" aria-live="polite">${rel.amsg?`<span class="ok">${esc(rel.amsg)}</span>`:""}</div>`;
+ return `<nav class="rel-tabs" aria-label="Secciones de TaskPal">${tabs.map(([k,l])=>`<button data-rel-tab="${k}" ${rel.tab===k?'aria-current="page"':""}>${l}</button>`).join("")}</nav>${body}
+  ${rel.running?"":`<div class="overlay-app"><p>En pausa.</p><button class="app-btn" data-rel="resume">Reanudar</button></div>`}`;}
+const repText=()=>{const r=S.release.report;return r?`Título: ${r.titulo}\nHallazgo: ${BUGS[r.bug]?BUGS[r.bug].t:r.bug}\nPasos para reproducir:\n${r.pasos}\nResultado esperado: ${r.esperado}\nResultado obtenido: ${r.obtenido}\nHeurística: ${CARDS[r.heur]?CARDS[r.heur].n:r.heur}`:"";};
+function repSide(){return S.release.report?`<div class="px side-box"><p class="lbl">Tu reporte de bug</p><pre class="term wrap" id="rep-text">${esc(repText())}</pre><div style="margin-top:10px"><button class="btn ghost" data-copy-rep>Copiar reporte</button></div></div>`:"";}
+function copyRep(){const txt=repText();const sel=()=>{const el=$("#rep-text");if(!el)return;const r=document.createRange();r.selectNodeContents(el);const s=getSelection();s.removeAllRanges();s.addRange(r);toast("Texto seleccionado: cópialo con Ctrl+C");};
+ try{navigator.clipboard.writeText(txt).then(()=>toast("Reporte copiado"),sel);}catch(e){sel();}}
+VIEWS.release=()=>{const fb=bugIds("release").filter(k=>S.found[k]);
+ return `${head(10,"Día de release","Jefe final. TaskPal 2.0 sale hoy con 8 bugs nuevos de todas las categorías. Encuéntralos y escribe un reporte de tu mejor hallazgo.")}
+ <div class="mission"><div class="stage">${phone(relApp(),"rel-screen","TaskPal 2.0")}
+  <div style="display:grid;gap:18px;min-width:0">
+   <div class="px side-box"><p class="lbl">${reduced()?"Tiempo transcurrido (sin límite)":"Temporizador"}</p><p class="big" id="rel-timer">${timerText()}</p>
+    ${rel.started?`<button class="btn ghost" data-rel="${rel.running?"pause":"resume"}">${rel.running?"Pausar":"Reanudar"}</button>`:""}
+    ${rel.timeUp?`<p style="margin:10px 0 0">Se acabó el tiempo. Puedes seguir explorando: lo que encuentres sigue contando.</p>`:""}</div>
+   <div class="px side-box"><p class="lbl">Registro del sistema</p><pre class="term wrap">${esc(rel.log.slice(-8).join("\n")||"(sin eventos)")}</pre></div>
+   <div class="px side-box"><p class="lbl">Exportación</p><pre class="term wrap">${esc(rel.csv||"(todavía no exportas nada)")}</pre></div>
+   ${fb.length?`<div class="px side-box report"><p class="lbl">Reporte de bug</p><p class="muted" style="margin:0 0 10px;font-size:15px">Elige tu mejor hallazgo y descríbelo para que otra persona pueda reproducirlo.</p>
+    <form id="rel-rep" novalidate>
+     <div><label for="rel-rbug">Hallazgo</label><select id="rel-rbug">${fb.map(k=>`<option value="${k}">${esc(BUGS[k].t)}</option>`).join("")}</select></div>
+     <div><label for="rel-rtitulo">Título</label><input id="rel-rtitulo" autocomplete="off"></div>
+     <div><label for="rel-rpasos">Pasos para reproducir</label><textarea id="rel-rpasos"></textarea></div>
+     <div><label for="rel-resperado">Resultado esperado</label><input id="rel-resperado" autocomplete="off"></div>
+     <div><label for="rel-robtenido">Resultado obtenido</label><input id="rel-robtenido" autocomplete="off"></div>
+     <div><label for="rel-rheur">Heurística</label><select id="rel-rheur">${CARD_ORDER.filter(id=>S.cards[id]).map(id=>`<option value="${id}">${esc(CARDS[id].n)}</option>`).join("")}</select></div>
+     <div><button class="btn" type="submit">${S.release.report?"Reemplazar reporte":"Guardar reporte"}</button></div>
+    </form><p class="forge-msg" aria-live="polite">${esc(rel.rmsg)}</p></div>`:""}
+  </div></div><aside class="side" id="side">${sideHTML("release")}</aside></div>`;};
+AFTER.release=()=>{
+ if(rel.running)relStartTick();
+ const ti=$("#rel-titulo");
+ if(ti)ti.addEventListener("beforeinput",e=>{ // el límite solo se aplica al teclear, a propósito
+  if(e.inputType==="insertText"||e.inputType==="insertCompositionText"){const a=ti.selectionStart||0,b=ti.selectionEnd||0,d=e.data||"",room=40-(ti.value.length-(b-a));if(d.length>room){e.preventDefault();if(room>0){ti.setRangeText(d.slice(0,room),a,b,"end");ti.dispatchEvent(new Event("input",{bubbles:true}));}}}});
+ const f=$("#rel-form");
+ if(f)f.addEventListener("submit",e=>{e.preventDefault();const t=$("#rel-titulo").value.trim(),tag=$("#rel-tag").value;
+  if(!t){relMsg("Escribe un título.",true);return render();}
+  if(rel.edit){const task=rel.tasks.find(x=>x.id===rel.edit);if(task){task.t=t;task.tag=tag;}rel.edit=null;relMsg("Tarea renombrada.");} // ← no invalida la caché de exportación, a propósito
+  else{rel.tasks.push({id:rel.next++,t,tag,done:false,cnt:0,arch:false,att:[]});rel.exp=null;relMsg("Tarea agregada.");}
+  setField("rel-titulo","");render();
+  // Provocar: pegar (Ctrl+V) un texto de más de 40 caracteres en el título y guardar.
+  if(t.length>40)triggerBug("z-paste",`título guardado con ${t.length} caracteres\nlímite anunciado: 40`);});
+ const rp=$("#rel-rep");
+ if(rp)rp.addEventListener("submit",e=>{e.preventDefault();const g=id=>String(rel.form[id]??($("#"+id)||{}).value??"").trim();
+  const r={bug:$("#rel-rbug").value,titulo:g("rel-rtitulo"),pasos:g("rel-rpasos"),esperado:g("rel-resperado"),obtenido:g("rel-robtenido"),heur:$("#rel-rheur").value};
+  if(!r.titulo||!r.esperado||!r.obtenido||r.pasos.length<10){rel.rmsg="Completa todos los campos; los pasos deben tener al menos 10 caracteres.";return render();}
+  const first=!S.release.report;S.release.report=r;if(first)S.xp+=20;rel.rmsg=first?"Reporte guardado en la bitácora: +20 XP.":"Reporte reemplazado.";save();checkBadges();render();});
+};
+function relAct(a,id,tag){
+ if(a==="start"){rel.started=true;rel.running=true;rel.since=Date.now();rel.exp=relSnap();relLog("TaskPal 2.0 iniciado");relStartTick();return render();}
+ if(a==="pause"){relPause();return render();}
+ if(a==="resume"){rel.running=true;rel.since=Date.now();relStartTick();return render();}
+ if(!rel.running)return;
+ const act=relActive();
+ if(a==="done"){const t=rel.tasks.find(x=>x.id===id);if(!t)return;t.done=!t.done;if(t.done){rel.doneToday++;t.cnt++;}render(); // ← desmarcar no resta, a propósito
+  // Provocar: completar una tarea, desmarcarla y volver a completarla.
+  if(t.done&&t.cnt>=2)triggerBug("z-streak",`«${t.t}» completada ${t.cnt} veces\n«Completadas hoy» dice ${rel.doneToday}; completadas de verdad: ${rel.tasks.filter(x=>x.done).length}`);return;}
+ if(a==="edit"){const t=rel.tasks.find(x=>x.id===id);if(!t)return;rel.edit=id;setField("rel-titulo",t.t);setField("rel-tag",t.tag);relMsg("");render();const i=$("#rel-titulo");if(i)i.focus();return;}
+ if(a==="cancel"){rel.edit=null;setField("rel-titulo","");relMsg("");return render();}
+ if(a==="del"){const i=act.findIndex(t=>t.id===id);if(i<0)return;const bug=i===act.length-1&&act.length>1;const victim=bug?act[0]:act[i]; // ← índice mal calculado al final, a propósito
+  rel.tasks=rel.tasks.filter(t=>t!==victim);rel.sel.delete(victim.id);rel.exp=null;if(rel.edit===victim.id)rel.edit=null;relMsg("Tarea borrada.");render();
+  // Provocar: borrar la última tarea de la lista (con dos o más tareas).
+  if(bug)triggerBug("z-last",`borraste: «${act[i].t}» (la última)\ndesapareció: «${victim.t}» (la primera)`);return;}
+ if(a==="archive"){let ids=[...rel.sel].filter(x=>act.some(t=>t.id===x));const none=!ids.length;if(none)ids=act.map(t=>t.id); // ← ninguna = todas, a propósito
+  if(!ids.length){relMsg("No hay tareas para archivar.",true);return render();}
+  rel.tasks.forEach(t=>{if(ids.includes(t.id))t.arch=true;});rel.sel.clear();rel.exp=null;relMsg(`${ids.length} ${ids.length===1?"tarea archivada":"tareas archivadas"}.`);render();
+  // Provocar: «Archivar seleccionadas» sin marcar ninguna tarea.
+  if(none)triggerBug("z-none",`seleccionadas: 0\narchivadas: ${ids.length} (todas)`);return;}
+ if(a==="export"){if(!rel.exp)rel.exp=relSnap();rel.csv="id,titulo,etiqueta\n"+rel.exp.map(r=>`${r.id},"${r.t.replace(/"/g,'""')}",${tagName(r.tag)}`).join("\n");relLog("Exportación CSV generada");relMsg("CSV listo: revisa el panel Exportación.");render();
+  const stale=rel.exp.map(r=>[r,rel.tasks.find(x=>x.id===r.id)]).filter(([r,t])=>t&&t.t!==r.t);
+  // Provocar: renombrar una tarea (Editar → Guardar cambios) y luego Exportar CSV.
+  if(stale.length)triggerBug("z-export",`en la app: «${stale[0][1].t}»\nen el CSV: «${stale[0][0].t}»`);return;}
+ if(a==="deltag"){const g=rel.tags.find(x=>x[0]===tag);if(!g)return;const used=rel.tasks.filter(t=>t.tag===tag);rel.tags=rel.tags.filter(x=>x[0]!==tag);relMsg(`Etiqueta «${g[1]}» borrada.`);render();
+  // Provocar: borrar la etiqueta «Trabajo» (o cualquiera con tareas).
+  if(used.length)triggerBug("z-orphan",`etiqueta borrada: ${g[1]}\n${used.length} ${used.length===1?"tarea muestra":"tareas muestran"} «undefined»`);return;}
+ if(a==="pomo"){const s=String(rel.form["rel-min"]??"25").trim();
+  if(!/^-?\d+$/.test(s))rel.pmsg="Escribe los minutos con números.";
+  else{const m=+s;if(m>60)rel.pmsg="El máximo es 60 minutos.";else if(m<0)rel.pmsg="No puede ser negativo.";
+   else if(m===0){rel.pomos+=1000;rel.pmsg="Pomodoro terminado ✓ ×1000";render(); // ← el 0 no se valida, a propósito
+    // Provocar: duración 0 e «Iniciar».
+    triggerBug("z-pomo",`duración = 0 min\npomodoros completados: ${rel.pomos} en menos de un segundo`);return;}
+   else{rel.pomos++;rel.pmsg=`Pomodoro de ${m} min completado ✓ (en este simulador el tiempo pasa al instante).`;}}
+  return render();}
+ if(a==="attach"){const space=rel.form["rel-space"]||"2gb";const tid=+(rel.form["rel-att"]||(act[0]&&act[0].id));const t=act.find(x=>x.id===tid)||act[0];if(!t)return;
+  if(space==="2gb"){t.att.push("foto.jpg (8 MB)");relLog("foto.jpg guardada (8 MB)");rel.amsg="Adjunto guardado ✓";return render();}
+  t.att.push("foto.jpg (0 B)");relLog("ERROR ENOSPC: sin espacio en disco; foto.jpg descartada");rel.amsg="Adjunto guardado ✓";render(); // ← no revisa el espacio, a propósito
+  // Provocar: espacio libre 5 MB y adjuntar la foto de 8 MB.
+  triggerBug("z-storage","espacio libre: 5 MB · foto: 8 MB\nla app dijo «Adjunto guardado ✓»\nregistro: ERROR ENOSPC");}
+}
+
 /* ----- Códice ----- */
 let cxFilter="Todas";
-VIEWS.codice=()=>{const list=CARD_ORDER.filter(id=>cxFilter==="Todas"||CARDS[id].cat===cxFilter);const n=Object.keys(S.cards).length;
+VIEWS.codice=()=>{const list=CARD_ORDER.filter(id=>cxFilter==="Todas"||CARDS[id].cat===cxFilter);const n=CARD_ORDER.filter(id=>S.cards[id]).length;
  return `<div class="m-head"><div><p class="lbl">Colección</p><h2>Códice de heurísticas · ${n}/${CARD_ORDER.length}</h2><p>Cada carta resume una heurística con un ejemplo y una combinación sugerida. Las cartas bloqueadas indican dónde conseguirlas.</p></div></div>
- <div class="filters">${["Todas"].concat(CATS).map(c=>`<button class="chip" data-filter="${c}" ${c===cxFilter?'style="border-color:var(--amber);color:var(--amber)"':""}>${c}</button>`).join("")}</div>
+ <div class="filters">${["Todas"].concat(CATS).map(c=>`<button class="chip" data-filter="${c}" aria-pressed="${c===cxFilter}" ${c===cxFilter?'style="border-color:var(--amber);color:var(--amber)"':""}>${c}</button>`).join("")}</div>
  <div class="cards">${list.map(id=>{const c=CARDS[id];return S.cards[id]?`<article class="card px"><span class="cat">${esc(c.cat)}</span><h3>${esc(c.n)}</h3><p>${esc(c.d)}</p><dl><dt>Ejemplo</dt><dd>${esc(c.ej)}</dd><dt>Combínala con</dt><dd>${esc(c.combo)}</dd></dl>${c.src?`<p class="src">Autoría: ${esc(c.src)}</p>`:""}</article>`
    :`<article class="card locked px"><span class="cat">${esc(c.cat)}</span><h3>???</h3><p class="muted">Se desbloquea en: ${esc(c.how)}</p></article>`;}).join("")}</div>`;};
 
 /* ----- Logros ----- */
 let confirmReset=false;
-VIEWS.logros=()=>`<div class="m-head"><div><p class="lbl">Tu partida</p><h2>Logros · ${Object.keys(S.badges).length}/${BADGES.length}</h2><p>XP total: ${S.xp}. Rango: ${esc(rank().name)}. Clasificaciones correctas al primer intento: ${S.firstTry}.</p></div></div>
+VIEWS.logros=()=>`<div class="m-head"><div><p class="lbl">Tu partida</p><h2>Logros · ${BADGES.filter(b=>S.badges[b.id]).length}/${BADGES.length}</h2><p>XP total: ${S.xp}. Rango: ${esc(rank().name)}. Clasificaciones correctas al primer intento: ${S.firstTry}.</p></div></div>
  <div class="badges">${BADGES.map(b=>`<div class="badge px ${S.badges[b.id]?"":"off"}">${pix(STAR)}<div><b>${esc(b.n)}</b><span>${esc(b.d)}</span></div></div>`).join("")}</div>
  <div class="px side-box"><p class="lbl">Reiniciar</p><p style="margin:0 0 12px">Borra tu XP, cartas e insignias de este navegador.</p>
  ${confirmReset?`<div class="row"><button class="btn danger" data-reset-yes>Sí, borrar todo</button><button class="btn ghost" data-reset-no>Cancelar</button></div>`:`<button class="btn ghost" data-reset>Reiniciar progreso</button>`}</div>`;
+function resetSims(){Object.assign(reg,{accounts:seedAccounts(),last:0,lastEmail:"",form:{}});Object.assign(rec,{list:seedReminders(),form:{}});Object.assign(api,{tasks:seedTasks(),next:10,res:null,form:{}});
+ sesReset();allyReset();relReset();Object.assign(tri,{picks:new Set(),checked:false,msg:"",cmsg:"",form:{}});pz=null;fz=null;specMarks=new Set();specChecked=false;}
+
+/* ---------- registro de niveles ---------- */
+// Agregar un nivel = una entrada aquí + su vista. Rutas, navegación, mapa y progreso se derivan de este arreglo.
+const LEVELS=[
+ {id:"registro",n:"Registro de cuenta",nav:"1 Registro",d:"Ataques con cadenas, números y reglas de negocio sobre un formulario de alta.",units:()=>bugUnits("registro")},
+ {id:"recordatorios",n:"Recordatorios",nav:"2 Fechas",d:"Fechas, horas, años bisiestos y zonas horarias.",units:()=>bugUnits("recordatorios")},
+ {id:"api",n:"Consola de la API",nav:"3 API",d:"Rompe la API REST de TaskPal con BINMEN, VADER y POISED.",units:()=>bugUnits("api")},
+ {id:"detective",n:"Detective de specs",nav:"4 Specs",d:"Marca las frases de una especificación que nadie podría probar.",units:()=>[S.spec.best,SPEC_FLAGS]},
+ {id:"forja",n:"Forja de mnemotecnias",nav:"5 Forja",d:"Arma letra por letra los acrónimos clásicos de las heurísticas.",units:()=>[nForge(),MNEMO.length]},
+ {id:"sesiones",n:"Dos sesiones",nav:"6 Sesiones",d:"Dos teléfonos, una cuenta: concurrencia, inundación e interrupciones.",units:()=>bugUnits("sesiones")},
+ {id:"triaje",n:"Triaje del release",nav:"7 Triaje",d:"Reparte cinco fichas de tiempo entre diez áreas de riesgo.",units:()=>[triUnits(),TRI_GOALS.length]},
+ {id:"personas",n:"Ruleta de personas",nav:"8 Personas",d:"Ponte en el lugar de personas usuarias muy distintas.",units:()=>[Math.min(PZ_ROUNDS,nPersonas()),PZ_ROUNDS]},
+ {id:"a11y",n:"Accesibilidad",nav:"9 A11y",d:"Teclado, lector de pantalla, color, zoom, subtítulos y contraste.",units:()=>bugUnits("a11y")},
+ {id:"release",n:"Día de release",nav:"10 Release",d:"Jefe final: 8 bugs mezclados contra el reloj y un reporte de bug.",units:()=>{const [a,b]=bugUnits("release");return [a+(S.release.report?1:0),b+1];},
+  req:["registro","recordatorios","api"],unlock:()=>["registro","recordatorios","api"].every(missionDone),lock:"Se desbloquea al completar los niveles 1, 2 y 3."}
+];
+LEVELS.forEach(l=>{l.view=VIEWS[l.id];l.after=AFTER[l.id];});
+const levelById=id=>LEVELS.find(l=>l.id===id);
+const ROUTES=["inicio",...LEVELS.map(l=>l.id),"codice","logros"];
+const NAV=[["inicio","Mapa"],...LEVELS.map(l=>[l.id,l.nav]),["codice","Códice"],["logros","Logros"]];
+const SIMS={reg,rec,api,ses,tri,ally,rel};
+let cur=ROUTES.includes(location.hash.slice(1))?location.hash.slice(1):"inicio";
+function go(r){if(!ROUTES.includes(r))r="inicio";if(cur==="release"&&r!=="release")relPause();cur=r;try{history.replaceState(null,"","#"+r);}catch(e){}render();window.scrollTo(0,0);}
 
 /* ---------- modal de clasificación ---------- */
-const queue=[];let modalOpen=false;
+const queue=[];let modalOpen=false,lastFocus=null,lastFocusId=null;
 function triggerBug(id,detail){if(S.found[id]||queue.some(q=>q.id===id))return;queue.push({id,detail});if(!modalOpen)openModal();}
-function openModal(){const q=queue[0];const b=BUGS[q.id];const opts=shuffle(b.opts.slice());const md=$("#modal");
+function openModal(keep){const q=queue[0];const b=BUGS[q.id];const opts=shuffle(b.opts.slice());const md=$("#modal");
+ if(!keep){lastFocus=document.activeElement;lastFocusId=lastFocus&&lastFocus.id||null;}
  md.innerHTML=`<div class="dialog px" role="dialog" aria-modal="true" aria-labelledby="mt">
   <div class="dlg-head">${pix(BUG)}<div><p class="lbl">Comportamiento anómalo</p><h2 id="mt">${esc(b.t)}</h2></div></div>
   <p>${esc(b.obs)}</p>${q.detail?`<pre class="term">${esc(q.detail)}</pre>`:""}
   <p class="q">¿Qué heurística te llevó a encontrarlo?</p>
   <div class="opts">${opts.map(o=>`<button class="opt" data-opt="${esc(o)}">${esc(o)}</button>`).join("")}</div>
   <div class="verdict" id="verdict"></div></div>`;
- md.hidden=false;modalOpen=true;const f=md.querySelector(".opt");f&&f.focus();}
+ md.hidden=false;modalOpen=true;const f=md.querySelector(".opt");if(f)f.focus();}
 function answer(label){const q=queue[0];const b=BUGS[q.id];const ok=b.ok.includes(label);
  document.querySelectorAll(".opt").forEach(o=>{o.disabled=true;const l=o.dataset.opt;if(b.ok.includes(l))o.classList.add("right");else if(l===label)o.classList.add("wrong");});
  const card=ok?LABEL[label]:LABEL[b.ok[0]];
+ // Encontrar el bug desbloquea todas sus cartas válidas, para que ninguna quede fuera de alcance.
+ const cards=[card,...b.ok.map(l=>LABEL[l])].filter((c,i,a)=>a.indexOf(c)===i);
  S.found[q.id]={ok,card};S.xp+=ok?30:10;if(ok)S.firstTry++;
- unlock(card);save();
- $("#verdict").innerHTML=`<p class="ttl ${ok?"good":"meh"}">${ok?"¡Correcto! +30 XP":"No exactamente. +10 XP por encontrarlo"}</p><p>${esc(b.why)}</p><p class="muted">Carta: ${esc(CARDS[card].n)}</p><div><button class="btn" data-continue>Continuar</button></div>`;
+ cards.forEach(unlock);
+ if(b.m==="release"&&missionDone("release")&&rel.started&&relElapsed()<=REL_MS)S.release.onTime=true;
+ save();live(`Bug registrado en la bitácora: ${b.t}.`);
+ $("#verdict").innerHTML=`<p class="ttl ${ok?"good":"meh"}">${ok?"¡Correcto! +30 XP":"No exactamente. +10 XP por encontrarlo"}</p><p>${esc(b.why)}</p><p class="muted">${cards.length>1?"Cartas":"Carta"}: ${cards.map(c=>esc(CARDS[c].n)).join(" · ")}</p><div><button class="btn" data-continue>Continuar</button></div>`;
  $("#verdict button").focus();}
-function closeModal(){queue.shift();$("#modal").hidden=true;modalOpen=false;checkBadges();refreshSide();if(queue.length)openModal();}
+function closeModal(){queue.shift();$("#modal").hidden=true;modalOpen=false;checkBadges();refreshSide();if(queue.length){openModal(true);return;}
+ const t=lastFocus&&lastFocus.isConnected?lastFocus:(lastFocusId?document.getElementById(lastFocusId):null);if(t&&t.focus)t.focus({preventScroll:true});lastFocus=null;}
 
 /* ---------- eventos ---------- */
-document.addEventListener("click",e=>{
- const el=e.target.closest("button,[data-seg]");if(!el)return;const d=el.dataset;
+const dataSel=el=>el.tagName.toLowerCase()+Object.entries(el.dataset).map(([k,v])=>`[data-${k.replace(/[A-Z]/g,m=>"-"+m.toLowerCase())}="${CSS.escape(v)}"]`).join("");
+function handleClick(el,d){
  if(d.go!==undefined)return go(d.go);
  if(d.opt!==undefined)return answer(d.opt);
  if(d.continue!==undefined)return closeModal();
- if(d.hint!==undefined){S.hints[d.hint]=Math.min(HINTS[d.hint].length,S.hints[d.hint]+1);save();return refreshSide();}
+ if(d.hint!==undefined){S.hints[d.hint]=Math.min(HINTS[d.hint].length,(S.hints[d.hint]||0)+1);save();return refreshSide();}
  if(d.wisdom!==undefined){wisdomI=(wisdomI+1)%WISDOM.length;return render();}
  if(d.reopen!==undefined){$("#reg-crash").hidden=true;return;}
- if(d.preset!==undefined){const pr=PRESETS[+d.preset];$("#api-method").value=pr[1];$("#api-path").value=pr[2];$("#api-token").value=pr[3];$("#api-body").value=pr[4];return;}
+ if(d.preset!==undefined){const pr=PRESETS[+d.preset];setField("api-method",pr[1]);setField("api-path",pr[2]);setField("api-token",pr[3]);setField("api-body",pr[4]);return;}
  if(d.send!==undefined)return sendApi();
  if(d.resetApi!==undefined){api.tasks=seedTasks();api.next=10;$("#api-res").innerHTML=api.res=`<span class="s2">Datos restaurados: tareas 1 a 9.</span>`;return;}
  if(d.seg!==undefined)return toggleSeg(+d.seg);
@@ -810,18 +1434,72 @@ document.addEventListener("click",e=>{
  if(d.slot!==undefined){const i=+d.slot;if(fz.slots[i]!==null){fz.slots[i]=null;fz.checked=false;fz.msg="";render();}return;}
  if(d.forgeCheck!==undefined)return forgeCheck();
  if(d.forgeClear!==undefined){fz.slots=fz.slots.map(()=>null);fz.checked=false;fz.msg="";return render();}
+ if(d.ses!==undefined)return sesAct(d.ses,d.k,+d.id);
+ if(d.tri!==undefined)return triPick(+d.tri);
+ if(d.triCheck!==undefined)return triCheck();
+ if(d.triRetry!==undefined){tri.picks=new Set();tri.checked=false;tri.msg="";return render();}
+ if(d.torch!==undefined)return torchSave();
+ if(d.pzSpin!==undefined||d.pzNext!==undefined){pzSpin();render();const h=$(".persona h3");if(h){h.tabIndex=-1;h.focus();}return;}
+ if(d.pzScreen!==undefined)return pzScreen(+d.pzScreen);
+ if(d.pzReason!==undefined)return pzReason(+d.pzReason);
+ if(d.ally!==undefined)return allyAct(d.ally,el);
+ if(d.relTab!==undefined){rel.tab=d.relTab;relMsg("");return render();}
+ if(d.rel!==undefined)return relAct(d.rel,+d.id,d.tag);
+ if(d.copyRep!==undefined)return copyRep();
  if(d.filter!==undefined){cxFilter=d.filter;return render();}
  if(d.reset!==undefined){confirmReset=true;return render();}
  if(d.resetNo!==undefined){confirmReset=false;return render();}
- if(d.resetYes!==undefined){S=blank();save();confirmReset=false;fz=null;specMarks=new Set();specChecked=false;
-  reg.accounts=seedAccounts();reg.last=0;reg.lastEmail="";rec.list=seedReminders();api.tasks=seedTasks();api.next=10;api.res=null;toast("Progreso reiniciado");return render();}
+ if(d.resetYes!==undefined){S=blank();save();confirmReset=false;resetSims();toast("Progreso reiniciado");return render();}
+}
+document.addEventListener("click",e=>{
+ const el=e.target.closest("button,[data-seg],a[data-ally-link]");if(!el)return;
+ if(el.matches("a[data-ally-link]")){e.preventDefault();return;}
+ const keep=el.closest("#view")&&!el.id?dataSel(el):null;
+ handleClick(el,el.dataset);
+ // Si la vista se redibujó, devuelve el foco al mismo control para no perder el lugar con el teclado.
+ if(keep&&!modalOpen&&(!document.activeElement||document.activeElement===document.body)){const n=document.querySelector(keep);if(n&&!n.disabled)n.focus({preventScroll:true});}
 });
+document.addEventListener("input",e=>{remember(e);if(e.target.id==="ally-titulo")allyChange(e.target);});
+document.addEventListener("change",e=>{remember(e);const t=e.target;
+ if(t.dataset&&t.dataset.relSel!==undefined){const id=+t.dataset.relSel;if(t.checked)rel.sel.add(id);else rel.sel.delete(id);return;}
+ if(t.id==="ally-zoom"||t.id==="ally-contrast")allyChange(t);});
+document.addEventListener("focusin",e=>{const t=e.target;if(!t.closest)return;
+ if(!t.closest("#ally-menu"))ally.tabs=0;
+ if(ally.sr&&t.closest("#ally-app"))announce(t);});
 document.addEventListener("keydown",e=>{
+ if(modalOpen){
+  if(e.key==="Tab"){const f=[...$("#modal").querySelectorAll("button:not(:disabled)")];if(!f.length)return;e.preventDefault();const i=f.indexOf(document.activeElement);f[e.shiftKey?(i<=0?f.length-1:i-1):(i<0||i===f.length-1?0:i+1)].focus();}
+  else if(e.key==="Escape"&&$("#verdict button")){e.preventDefault();closeModal();}
+  return;}
  const s=e.target.closest&&e.target.closest("[data-seg]");
  if(s&&(e.key==="Enter"||e.key===" ")){e.preventDefault();toggleSeg(+s.dataset.seg);}
  if(e.key==="Enter"&&e.target.id==="api-path"){e.preventDefault();sendApi();}
+ const menu=e.target.closest&&e.target.closest("#ally-menu");
+ if(menu&&e.key==="Tab"){e.preventDefault();const ls=[...menu.querySelectorAll("a")];const i=ls.indexOf(e.target);ls[(i+(e.shiftKey?-1:1)+ls.length)%ls.length].focus();ally.tabs++; // ← trampa de foco, a propósito
+  // Provocar: enfocar el menú de la app y presionar Tab seis veces.
+  if(ally.tabs>=6)triggerBug("x-trap",`Tab ×${ally.tabs}: el foco sigue dando vueltas entre Inicio, Tareas y Ajustes\nno hay forma de llegar al resto con el teclado`);}
+ if(menu&&e.key==="Escape"){e.preventDefault();ally.tabs=0;const b=$('[data-ally="play"]');if(b)b.focus();}
 });
 
+/* ---------- validación de datos (modo DEV) ---------- */
+function validateData(){const P=[];
+ for(const [k,b] of Object.entries(BUGS)){
+  if(b.opts.length!==4||new Set(b.opts).size!==4)P.push(`${k}: necesita 4 opciones distintas`);
+  b.opts.forEach(l=>{if(!LABEL[l])P.push(`${k}: la etiqueta «${l}» no existe en LABEL`);});
+  b.ok.forEach(o=>{if(!b.opts.includes(o))P.push(`${k}: «${o}» está en ok pero no en opts`);});
+  if(!HINTS[b.m])P.push(`${k}: la misión ${b.m} no tiene pistas`);
+  if(!levelById(b.m))P.push(`${k}: la misión ${b.m} no está en LEVELS`);}
+ Object.entries(LABEL).forEach(([l,c])=>{if(!CARDS[c])P.push(`LABEL «${l}» apunta a una carta inexistente: ${c}`);});
+ const reach=new Set([...Object.values(BUGS).flatMap(b=>b.ok.map(l=>LABEL[l])),...MNEMO.map(m=>m.id),...EXTRA.map(x=>x.card)]);
+ CARD_ORDER.forEach(id=>{if(!reach.has(id))P.push(`Carta inalcanzable: ${id}`);if(!CATS.includes(CARDS[id].cat))P.push(`Categoría desconocida en ${id}`);});
+ MNEMO.forEach(m=>{if(!CARDS[m.id])P.push(`Mnemotecnia sin carta: ${m.id}`);if(m.w.length!==m.acr.length)P.push(`${m.acr}: ${m.w.length} palabras para ${m.acr.length} letras`);
+  m.w.forEach(([w],i)=>{if(w[0].toUpperCase()!==m.acr[i])P.push(`${m.acr}: «${w}» no empieza con ${m.acr[i]}`);});});
+ PERSONAS.forEach(p=>{if(p.s.length!==3||p.r.length!==3)P.push(`Persona incompleta: ${p.id}`);});
+ if(PERSONAS.length<PZ_ROUNDS)P.push("Hay menos personas que rondas");
+ return P;}
+if(DEV){const P=validateData();if(P.length)console.error("Problemas de datos:\n"+P.join("\n"));else console.info("Datos válidos: "+TOTAL_BUGS+" bugs, "+CARD_ORDER.length+" cartas.");}
+
+checkBadges(); // otorga cartas e insignias pendientes de partidas anteriores
 render();
 })();
 </script>
